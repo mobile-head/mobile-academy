@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Now UI Dashboard React - v1.4.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Dashboard from "views/Dashboard.js";
 import Notifications from "views/Notifications.js";
 import Icons from "views/Icons.js";
@@ -35,6 +18,18 @@ import Evolog4PL from "./views/Overview/Evolog4PL.js";
 import Code from "./views/Documentation/Code.js";
 import Components from "./views/Documentation/Components.js";
 import Structure from "./views/Documentation/Structure.js";
+
+//-------------------------------------------------------------------------
+import CreatingProject from "./views/Help/CreatingProject.js";
+import EnvironmentDivision from "./views/Help/EnvironmentDivision.js";
+import CodePush from "./views/Help/CodePush.js";
+import Prettier from "./views/Help/Prettier.js";
+import ESLint from "./views/Help/ESLint.js";
+import Husky from "./views/Help/Husky.js";
+import Analytics from "./views/Help/Analytics.js";
+import Crashlytics from "./views/Help/Crashlytics.js";
+import Commitzen from "./views/Help/Commitzen.js";
+import Pipeline from "./views/Help/Pipeline.js";
 
 //-------------------------------------------------------------------------
 import Windows from "./views/WorkspacePreparation/Windows.js";
@@ -110,7 +105,7 @@ var dashRoutes = [
     dropdown: [
       {
         path: "/documentation/Code",
-        name: "Código",
+        name: "Code/Rules",
         component: Code,
         layout: "/admin",
       },
@@ -125,14 +120,75 @@ var dashRoutes = [
         name: "Estruturação",
         component: Structure,
         layout: "/admin",
-        dropdown: [
-          {
-            path: "/documentation/Structure",
-            name: "Estruturação",
-            component: Structure,
-            layout: "/admin",
-          },
-        ],
+      },
+    ],
+  },
+  {
+    path: "/help/CreatingProject",
+    name: "Help",
+    icon: "business_bulb-63",
+    component: CreatingProject,
+    layout: "/admin",
+    dropdown: [
+      {
+        path: "/help/CreatingProject",
+        name: "Gerando um projeto",
+        component: CreatingProject,
+        layout: "/admin",
+      },
+      {
+        path: "/help/EnvironmentDivision",
+        name: "Divisão de ambientes",
+        component: EnvironmentDivision,
+        layout: "/admin",
+      },
+      {
+        path: "/help/CodePush",
+        name: "CodePush",
+        component: CodePush,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Crashlytics",
+        name: "Crashlytics",
+        component: Crashlytics,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Analytics",
+        name: "Analytics",
+        component: Analytics,
+        layout: "/admin",
+      },
+      {
+        path: "/help/ESLint",
+        name: "ESLint",
+        component: ESLint,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Prettier",
+        name: "Prettier",
+        component: Prettier,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Husky",
+        name: "Husky",
+        component: Husky,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Commitzen",
+        name: "Commitzen",
+        component: Commitzen,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Pipeline",
+        name: "Pipeline",
+        component: Pipeline,
+        layout: "/admin",
       },
     ],
   },
@@ -215,7 +271,7 @@ var dashRoutes = [
   },
   {
     path: "/documentation/Code",
-    name: "Código",
+    name: "Code/Rules",
     component: Code,
     layout: "/admin",
     invisible: true,
@@ -245,6 +301,76 @@ var dashRoutes = [
     path: "/workspacePreparation/Mac",
     name: " Mac OS",
     component: Mac,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/CreatingProject",
+    name: "Gerando um projeto",
+    component: CreatingProject,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/EnvironmentDivision",
+    name: "Divisão de ambientes",
+    component: EnvironmentDivision,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/CodePush",
+    name: "CodePush",
+    component: CodePush,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Crashlytics",
+    name: "Crashlytics",
+    component: Crashlytics,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Analytics",
+    name: "Analytics",
+    component: Analytics,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/ESLint",
+    name: "ESLint",
+    component: ESLint,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Prettier",
+    name: "Prettier",
+    component: Prettier,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Husky",
+    name: "Husky",
+    component: Husky,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Commitzen",
+    name: "Commitzen",
+    component: Commitzen,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Commitzen",
+    name: "Pipeline",
+    component: Pipeline,
     layout: "/admin",
     invisible: true,
   },

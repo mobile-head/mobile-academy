@@ -31,7 +31,7 @@ class Sidebar extends React.Component {
     super(props);
     this.state = {
       dropdownActive: false,
-      key: false
+      key: false,
     };
 
     this.activeRoute.bind(this);
@@ -47,10 +47,8 @@ class Sidebar extends React.Component {
 
     return (
       <div>
-        {
-          this.state.dropdownActive &&
-          this.state.key === parentKey &&
-          < li
+        {this.state.dropdownActive && this.state.key === parentKey && (
+          <li
             className={
               this.activeRoute(prop.layout + prop.path) +
               (prop.pro ? " active active-pro" : "")
@@ -62,12 +60,12 @@ class Sidebar extends React.Component {
               className="nav-link"
               activeClassName="active"
             >
-              <p class="mr-4">{prop.name}</p>
+              <p class="mr-2 pl-5">{prop.name}</p>
             </NavLink>
           </li>
-        }
+        )}
       </div>
-    )
+    );
   }
 
   // verifies if routeName is the one active (in browser input)
@@ -94,22 +92,14 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar" data-color={"blue"}>
         <div className="logo">
-          <a
-            href="#"
-            className="simple-text logo-mini"
-            target="_blank"
-          >
+          <a href="#" className="simple-text logo-mini" target="_blank">
             <div className="logo-img">
               <img src={logo} alt="react-logo" />
             </div>
           </a>
 
-          <a
-            href="#"
-            className="simple-text logo-normal"
-            target="_blank"
-          >
-            Mobile
+          <a href="#" className="simple-text logo-normal" target="_blank">
+            Code Haven
           </a>
         </div>
 
@@ -128,30 +118,28 @@ class Sidebar extends React.Component {
                     key={parentKey}
                   >
                     <NavLink
-                      onClick={prop?.dropdown?.length > 0 ? () => this.openDropdown(parentKey) : () => null}
+                      onClick={
+                        prop?.dropdown?.length > 0
+                          ? () => this.openDropdown(parentKey)
+                          : () => null
+                      }
                       to={prop.layout + prop.path}
                       className="nav-link"
                       activeClassName="active"
                     >
-
                       <i className={"now-ui-icons " + prop.icon} />
                       <p>{prop.name}</p>
-
                     </NavLink>
 
                     {prop?.dropdown?.map((prop, key) => {
-                      return (
-                        this.renderDropdown(prop, key, parentKey)
-                      )
-                    })
-                    }
-
+                      return this.renderDropdown(prop, key, parentKey);
+                    })}
                   </li>
-                )
+                );
             })}
           </Nav>
         </div>
-      </div >
+      </div>
     );
   }
 }
