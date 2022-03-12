@@ -10,7 +10,7 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 // core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
-import { CodeExamplesStructure } from "../../variables/codeExamplesStructure";
+import { CodeExamplesCrashlytics } from "../../variables/codeExamplesCrashlytics";
 
 class Crashlytics extends Component {
   render() {
@@ -36,110 +36,188 @@ class Crashlytics extends Component {
                 <CardBody>
                   <p>
                     <h6>
-                      <a id="newProjects">
-                        A respeito da criação de novos projetos mobile
+                      <a id="crashlytics">
+                        A respeito da Integração do Crashlytics do App Center
+                        com o aplicativo
                       </a>
                     </h6>
-                    <h7
-                      id="createProjectsWithoutTemplate"
-                      class="font-weight-bold"
-                    >
-                      Criando projetos sem template
+                    <h7 id="whyCrashlytics" class="font-weight-bold">
+                      O que é e porque usar o Crashlytics
+                    </h7>
+                    <br />
+                    <p>
+                      O Crashlytics se baseia na ideia de ser avisado sobre um
+                      crash em tempo real desde que o usuário tenha internet,
+                      caso o dispositivo não tenha rede o log será salvo no
+                      storage do dispositivo e enviado quando houver rede
+                      novamente, o crashlytics nos permite visualizar quem foi o
+                      usuário, qual a stack trace do erro, e quais foram os
+                      eventos que aconteceram até o crash. Isso nos permite
+                      resolver um erro grave no app com uma velocidade maior, e
+                      com um entendimento muito melhor do que ocorreu com o
+                      aplicativo. A sessão de Crashlytics pode ser acessado pelo
+                      App Center clicando em 'Diagnostics {">>"} Issues':
+                    </p>
+                    <div>
+                      <img
+                        height="150px"
+                        alt="..."
+                        src={require("assets/img/DiagnosticsSidebar.png")}
+                      />
+                    </div>
+                    <br /> <br />
+                    <h7 id="crashlyticsIntegration" class="font-weight-bold">
+                      Integrando o Crashlytics com o aplicativo
                     </h7>
                     <p>
-                      Os projetos são criados utilizando o react-native-cli:
+                      Execute o comando abaixo para instalar as dependências do
+                      analytics e crashlytics:
                     </p>
                     <pre>
                       <SyntaxHighlighter
                         language="js"
                         style={a11yDark}
                         PreTag="div"
-                        children={CodeExamplesStructure.initProject}
+                        children={CodeExamplesCrashlytics.installDependencies}
                       />
                     </pre>
-                    <h7
-                      id="createProjectsWithTemplate"
-                      class="font-weight-bold"
-                    >
-                      Criando projetos com template
-                    </h7>
                     <p>
-                      Os projetos também podem ser criados utilizando o template
-                      padrão utilizado na Bravo:
+                      Crie dentro da pasta android/app/src/main/assets/ um
+                      arquivo chamado appcenter-config.json com o seguinte
+                      conteúdo:
                     </p>
                     <pre>
                       <SyntaxHighlighter
                         language="js"
                         style={a11yDark}
                         PreTag="div"
-                        children={CodeExamplesStructure.initProjectWithTemplate}
+                        children={CodeExamplesCrashlytics.appSecretExample}
                       />
                     </pre>
                     <p>
-                      Este{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://github.com/Kalebesamuel/react-native-template"
-                        target="_blank"
-                      >
-                        template
-                      </a>{" "}
-                      conta com a grande parte das bibliotecas usadas em todos
-                      os projetos, junto com styledComponents, components,{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://developer.android.com/studio/build/build-variants"
-                        target="_blank"
-                      >
-                        divisão de ambientes
-                      </a>{" "}
-                      em DEV/QAS/PRD, configurações do{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://commitizen-tools.github.io/commitizen/"
-                        target="_blank"
-                      >
-                        commitzen,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://eslint.org/"
-                        target="_blank"
-                      >
-                        ESLint,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://prettier.io/"
-                        target="_blank"
-                      >
-                        Prettier,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://typicode.github.io/husky/#/"
-                        target="_blank"
-                      >
-                        Husky,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://bitbucket.org/product/br/features/pipelines"
-                        target="_blank"
-                      >
-                        Bitbucket Pipeline,
-                      </a>{" "}
-                      dentre outras configurações que serão abordadas por aqui.
-                      Opte sempre preferencialmente por iniciar projetos atráves
-                      deste template, para que não seja necessário realizar as
-                      configurações manualmente.
+                      A chave pode ser encontrada em Overview acessando pela
+                      Sidebar se o projeto ainda não integrado com o App Center.
+                      Agora precisamos configurar quando será enviado os crashes
+                      e a análise de uso da nossa aplicação para o App Center,
+                      para isso edite o arquivo dentro de cada ambiente para que
+                      fique assim, caso seja necessário os ambientes podem ter
+                      configurações diferentes:
+                    </p>
+                    <pre>
+                      <SyntaxHighlighter
+                        language="js"
+                        style={a11yDark}
+                        PreTag="div"
+                        children={CodeExamplesCrashlytics.whenToSend}
+                      />
+                    </pre>
+                    <p>
+                      Agora podemos executar o app e ver se a tela de Overview
+                      do projeto no App Center já nos deu informações do
+                      dispositivo.
+                    </p>
+                    <br />
+                    <h7 id="crashlyticsDashboard" class="font-weight-bold">
+                      Conhecendo o Crashlytics Dashboard
+                    </h7>
+                    <br /> <br />
+                    <div>
+                      <img
+                        height="450px"
+                        alt="..."
+                        src={require("assets/img/CrashlyticsDashboard.png")}
+                      />
+                    </div>
+                    <br /> <br />
+                    <p>
+                      <dl>
+                        <dt>1. Filtros do Dashboard</dt>
+                        <dd>
+                          Nos permite filtrar pela quantidade de dias, número da
+                          versão e verificar o status do Crash, se já resolvemos
+                          ou não.
+                        </dd>
+                        <dt>2. Lista de crashes do aplicativo</dt>
+                        <dd>
+                          Exibe os crashes que aconteceram no app, nos mostra a
+                          qauntidade de vezes que aconteceu, a quantidade de
+                          usuários que tiveram o mesmo erro, em qual versão
+                          ocorreu, status e a última vez em que esse crash foi
+                          reportado para verificarmos a sua recorrência.
+                        </dd>
+                      </dl>
+                    </p>
+                    <br />
+                    <h7 id="crashOverview" class="font-weight-bold">
+                      Overview do crash
+                    </h7>
+                    <p>
+                      Ao cliar no crash, teremos a visão da sua Overview que nos
+                      informará a stack trace do erro, e também nos informará
+                      qual versão do Android/iOS foi afetada pelo erro.
+                    </p>
+                    <div>
+                      <img
+                        height="450px"
+                        alt="..."
+                        src={require("assets/img/CrashOverview.png")}
+                      />
+                    </div>
+                    <div>
+                      <img
+                        height="205px"
+                        alt="..."
+                        src={require("assets/img/CrashOverview2.png")}
+                      />
+                    </div>
+                    <br /> <br />
+                    <h7 id="crashReport" class="font-weight-bold">
+                      Report do crash
+                    </h7>
+                    <p>
+                      O report do crash é o evento disparado quando o crash
+                      acontece no dispositivo do usuário e é enviado para o
+                      Crashlytics do App Center, este report nos dá informações
+                      extremamente relevantes e consegue nos dar ainda mais
+                      informações relevantes se o aplicativo estiver integrado
+                      com o Analytics do App Center também, para que seja
+                      possível avaliarmos os eventos que foram disparados até
+                      que o aplicativo veio a parar de funcionar.
+                    </p>
+                    <div>
+                      <img
+                        height="310px"
+                        alt="..."
+                        src={require("assets/img/ReportCrash.png")}
+                      />
+                    </div>
+                    <br />
+                    <p>
+                      Ao clicar no report nos conseguiremos visualizar de forma
+                      detalhada o que aconteceu no aplicativo, para tentarmos
+                      identificar o erro e definirmos uma solução.
+                    </p>
+                    <div>
+                      <img
+                        height="550px"
+                        alt="..."
+                        src={require("assets/img/CrashEvents.png")}
+                      />
+                    </div>
+                    <br />
+                    <p>
+                      <dl>
+                        <dt>1. Crash</dt>
+                        <dd>Informa a descrição do erro que levou ao crash.</dd>
+                        <dt>2. Usuário</dt>
+                        <dd>Informa o id do usuário.</dd>
+                        <dt>2. Eventos</dt>
+                        <dd>
+                          Exibe todos os eventos rastreados até o momento em que
+                          o aplicativo parou de funcionar. Para entender melhor
+                          sobre os eventos veja a sessão de Analytics.
+                        </dd>
+                      </dl>
                     </p>
                   </p>
                 </CardBody>
@@ -161,24 +239,37 @@ class Crashlytics extends Component {
 
                 <CardBody>
                   <p>
-                    <a className="text-muted" href="#newProjects">
-                      - A respeito da criação de novos projetos mobile
+                    <a className="text-muted" href="#crashlytics">
+                      - A respeito da Integração do Crashlytics do App Center
+                      com o aplicativo
                     </a>
                     <ul>
                       <li>
-                        <a
-                          className="text-muted"
-                          href="#createProjectsWithoutTemplate"
-                        >
-                          Criando projetos sem template
+                        <a className="text-muted" href="#whyCrashlytics">
+                          O que é e porque usar o Crashlytics
                         </a>
                       </li>
                       <li>
                         <a
                           className="text-muted"
-                          href="#createProjectsWithTemplate"
+                          href="#crashlyticsIntegration"
                         >
-                          Criando projetos com template
+                          Integrando o Crashlytics com o aplicativo
+                        </a>
+                      </li>
+                      <li>
+                        <a className="text-muted" href="#crashlyticsDashboard">
+                          Conhecendo o Crashlytics Dashboard
+                        </a>
+                      </li>
+                      <li>
+                        <a className="text-muted" href="#crashOverview">
+                          Overview do Crash
+                        </a>
+                      </li>
+                      <li>
+                        <a className="text-muted" href="#crashReport">
+                          Report do Crash
                         </a>
                       </li>
                     </ul>
