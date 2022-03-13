@@ -242,7 +242,15 @@ const Mac = () => {
             </Card>
           </Col>
 
-          <Col md="3">
+          <Col
+            md="3"
+            style={{
+              position: "fixed",
+              top: "11%",
+              right: "0px",
+              width: "22%",
+            }}
+          >
             <Card className="card-user">
               <CardHeader>
                 <CardTitle>Guia Rápido</CardTitle>
