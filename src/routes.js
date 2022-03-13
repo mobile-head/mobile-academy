@@ -1,6 +1,5 @@
 import Dashboard from "views/Dashboard.js";
 import Notifications from "views/Notifications.js";
-import Icons from "views/Icons.js";
 import Typography from "views/Typography.js";
 import TableList from "views/TableList.js";
 import Maps from "views/Maps.js";
@@ -34,6 +33,11 @@ import Pipeline from "./views/Help/Pipeline.js";
 //-------------------------------------------------------------------------
 import Windows from "./views/WorkspacePreparation/Windows.js";
 import Mac from "./views/WorkspacePreparation/Mac.js";
+
+//-------------------------------------------------------------------------
+import NativeModulesAndroid from "./views/Components/NativeModulesAndroid.js";
+import NativeModulesIos from "./views/Components/NativeModulesIos.js";
+import { isYieldExpression } from "typescript";
 
 var dashRoutes = [
   {
@@ -193,11 +197,25 @@ var dashRoutes = [
     ],
   },
   {
-    path: "/icons",
-    name: "Components",
-    icon: "design_image",
-    component: Icons,
+    path: "/components/native-modules/",
+    name: "Componentes",
+    icon: "objects_diamond",
+    component: NativeModulesAndroid,
     layout: "/admin",
+    dropdown: [
+      {
+        path: "/components/native-modules/android",
+        name: "Native Modules - Android",
+        component: NativeModulesAndroid,
+        layout: "/admin",
+      },
+      {
+        path: "/components/native-modules/ios",
+        name: "Native Modules - Ios",
+        component: NativeModulesIos,
+        layout: "/admin",
+      },
+    ],
   },
   {
     path: "/dashboard",
@@ -371,6 +389,20 @@ var dashRoutes = [
     path: "/help/Commitzen",
     name: "Pipeline",
     component: Pipeline,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/components/native-modules/android",
+    name: "Native Modules - Android",
+    component: NativeModulesAndroid,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/components/native-modules/ios",
+    name: "Native Modules - Ios",
+    component: NativeModulesIos,
     layout: "/admin",
     invisible: true,
   },

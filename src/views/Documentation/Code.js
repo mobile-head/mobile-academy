@@ -218,6 +218,13 @@ class Code extends Component {
                       do projeto, crie um <b>StyledComponents</b> para ele.
                     </p>
 
+                    <p>
+                      <b>OBS.:</b> Os píxels utilizados dentro de um componente{" "}
+                      <b>styled</b> são automaticamente convertidos para
+                      píxels-independentes-de-densidade, "dp". Por isso, aqui a
+                      utilização da unidade "px" é válida.
+                    </p>
+
                     <p class="font-weight-bold">Exemplo de StyledComponents</p>
                     <pre>
                       <SyntaxHighlighter
