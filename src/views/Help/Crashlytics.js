@@ -67,7 +67,7 @@ class Crashlytics extends Component {
                     </div>
                     <br /> <br />
                     <h7 id="crashlyticsIntegration" class="font-weight-bold">
-                      Integrando o Crashlytics com o aplicativo
+                      Integrando o App Center/Crashlytics com o aplicativo
                     </h7>
                     <p>
                       Execute o comando abaixo para instalar as dependências do
@@ -254,7 +254,7 @@ class Crashlytics extends Component {
                           className="text-muted"
                           href="#crashlyticsIntegration"
                         >
-                          Integrando o Crashlytics com o aplicativo
+                          Integrando o App Center/Crashlytics com o aplicativo
                         </a>
                       </li>
                       <li>
