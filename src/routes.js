@@ -19,16 +19,16 @@ import Components from "./views/Documentation/Components.js";
 import Structure from "./views/Documentation/Structure.js";
 
 //-------------------------------------------------------------------------
-import CreatingProject from "./views/Help/CreatingProject.js";
-import EnvironmentDivision from "./views/Help/EnvironmentDivision.js";
-import CodePush from "./views/Help/CodePush.js";
-import Prettier from "./views/Help/Prettier.js";
-import ESLint from "./views/Help/ESLint.js";
-import Husky from "./views/Help/Husky.js";
-import Analytics from "./views/Help/Analytics.js";
-import Crashlytics from "./views/Help/Crashlytics.js";
-import Commitzen from "./views/Help/Commitzen.js";
-import Pipeline from "./views/Help/Pipeline.js";
+import CreatingProject from "./views/Structure/CreatingProject.js";
+import EnvironmentDivision from "./views/Structure/EnvironmentDivision.js";
+import CodePush from "./views/Structure/CodePush.js";
+import Prettier from "./views/Structure/Prettier.js";
+import ESLint from "./views/Structure/ESLint.js";
+import Husky from "./views/Structure/Husky.js";
+import Analytics from "./views/Structure/Analytics.js";
+import Crashlytics from "./views/Structure/Crashlytics.js";
+import Commitzen from "./views/Structure/Commitzen.js";
+import Pipeline from "./views/Structure/Pipeline.js";
 
 //-------------------------------------------------------------------------
 import Windows from "./views/WorkspacePreparation/Windows.js";
@@ -128,68 +128,68 @@ var dashRoutes = [
     ],
   },
   {
-    path: "/help/CreatingProject",
-    name: "Help",
-    icon: "business_bulb-63",
+    path: "/structure/CreatingProject",
+    name: "Structure",
+    icon: "design_bullet-list-67",
     component: CreatingProject,
     layout: "/admin",
     dropdown: [
       {
-        path: "/help/CreatingProject",
+        path: "/structure/CreatingProject",
         name: "Gerando um projeto",
         component: CreatingProject,
         layout: "/admin",
       },
       {
-        path: "/help/EnvironmentDivision",
+        path: "/structure/EnvironmentDivision",
         name: "Divisão de ambientes",
         component: EnvironmentDivision,
         layout: "/admin",
       },
       {
-        path: "/help/CodePush",
+        path: "/structure/CodePush",
         name: "CodePush",
         component: CodePush,
         layout: "/admin",
       },
       {
-        path: "/help/Crashlytics",
+        path: "/structure/Crashlytics",
         name: "Crashlytics",
         component: Crashlytics,
         layout: "/admin",
       },
       {
-        path: "/help/Analytics",
+        path: "/structure/Analytics",
         name: "Analytics",
         component: Analytics,
         layout: "/admin",
       },
       {
-        path: "/help/ESLint",
+        path: "/structure/ESLint",
         name: "ESLint",
         component: ESLint,
         layout: "/admin",
       },
       {
-        path: "/help/Prettier",
+        path: "/structure/Prettier",
         name: "Prettier",
         component: Prettier,
         layout: "/admin",
       },
       {
-        path: "/help/Husky",
+        path: "/structure/Husky",
         name: "Husky",
         component: Husky,
         layout: "/admin",
       },
       {
-        path: "/help/Commitzen",
+        path: "/structure/Commitzen",
         name: "Commitzen",
         component: Commitzen,
         layout: "/admin",
       },
       {
-        path: "/help/Pipeline",
+        path: "/structure/Pipeline",
         name: "Pipeline",
         component: Pipeline,
         layout: "/admin",
@@ -323,70 +323,70 @@ var dashRoutes = [
     invisible: true,
   },
   {
-    path: "/help/CreatingProject",
+    path: "/structure/CreatingProject",
     name: "Gerando um projeto",
     component: CreatingProject,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/EnvironmentDivision",
+    path: "/structure/EnvironmentDivision",
     name: "Divisão de ambientes",
     component: EnvironmentDivision,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/CodePush",
+    path: "/structure/CodePush",
     name: "CodePush",
     component: CodePush,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Crashlytics",
+    path: "/structure/Crashlytics",
     name: "Crashlytics",
     component: Crashlytics,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Analytics",
+    path: "/structure/Analytics",
     name: "Analytics",
     component: Analytics,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/ESLint",
+    path: "/structure/ESLint",
     name: "ESLint",
     component: ESLint,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Prettier",
+    path: "/structure/Prettier",
     name: "Prettier",
     component: Prettier,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Husky",
+    path: "/structure/Husky",
     name: "Husky",
     component: Husky,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Commitzen",
+    path: "/structure/Commitzen",
     name: "Commitzen",
     component: Commitzen,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Commitzen",
+    path: "/structure/Commitzen",
     name: "Pipeline",
     component: Pipeline,
     layout: "/admin",
