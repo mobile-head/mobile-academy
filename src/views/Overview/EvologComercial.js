@@ -91,7 +91,10 @@ const EvologComercial = () => {
                     <a id="title1">Suporte</a>
                   </h6>
 
-                  <p>Conta com mais de 1000 usuários mensais.</p>
+                  <p>
+                    Por ser uma ferramenta puramente administrativa, conta com
+                    apenas algumas centenas de usuários mensais.
+                  </p>
 
                   {Object.keys(appSupport).map((v) => {
                     return (
