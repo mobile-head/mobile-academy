@@ -37,7 +37,12 @@ import Mac from "./views/WorkspacePreparation/Mac.js";
 //-------------------------------------------------------------------------
 import NativeModulesAndroid from "./views/Components/NativeModulesAndroid.js";
 import NativeModulesIos from "./views/Components/NativeModulesIos.js";
-import { isYieldExpression } from "typescript";
+
+//-------------------------------------------------------------------------
+import Navegacao from "./views/Help/Navegacao.js";
+import Armazenamento from "./views/Help/Armazenamento.js";
+import Componente from "./views/Help/Componente.js";
+import Logica from "./views/Help/Logica.js";
 
 var dashRoutes = [
   {
@@ -123,6 +128,39 @@ var dashRoutes = [
         path: "/documentation/Structure",
         name: "Estruturação",
         component: Structure,
+        layout: "/admin",
+      },
+    ],
+  },
+  {
+    path: "/help/Componente",
+    name: "Help",
+    icon: "objects_support-17",
+    component: Componente,
+    layout: "/admin",
+    dropdown: [
+      {
+        path: "/help/Componente",
+        name: "Componente",
+        component: Componente,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Logica",
+        name: "Lógica",
+        component: Logica,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Armazenamento",
+        name: "Armazenamento",
+        component: Armazenamento,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Navegacao",
+        name: "Navegação",
+        component: Navegacao,
         layout: "/admin",
       },
     ],
@@ -403,6 +441,34 @@ var dashRoutes = [
     path: "/components/native-modules/ios",
     name: "Native Modules - Ios",
     component: NativeModulesIos,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Componente",
+    name: "Componente",
+    component: Componente,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Logica",
+    name: "Lógica",
+    component: Logica,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Armazenamento",
+    name: "Armazenamento",
+    component: Armazenamento,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Navegacao",
+    name: "Navegação",
+    component: Navegacao,
     layout: "/admin",
     invisible: true,
   },

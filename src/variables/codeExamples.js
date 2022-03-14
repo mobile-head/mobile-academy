@@ -118,6 +118,301 @@ const CodeExamples = {
     showValueWithKey={'NMCHLIST'} />
     `,
 
+  Help: {
+    Componente: {
+      BasicStructure: [
+        `// == React Component ==
+// Importacoes de pacotes
+import React from 'react';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+
+// Importacoes do projeto
+import Header from '@components/Header';
+impoty appStyles from '@styles';
+
+// Importacoes locais / de dentro do pacote
+import { useInit, useOnDoAction } from './logic';
+
+// Desconstrução de constantes
+const { width } = Dimensions.get('window');
+
+//=================================================
+const Component = () => {
+
+  // Chamadas de useEffect
+  useInit();
+
+  // Instanciamento de useCallbacks
+  const onDoAction = useOnDoAction();
+
+  // Criação de constantes e mock data
+  const screenActions = [
+    {
+      label: "First Action",
+      color: "#922",
+      data: { id: 0, value: "val1" },
+      disabled: false,
+    },
+    {
+      label: "Second Action",
+      color: "#710",
+      data: { id: 1, value: "val2" },
+      disabled: false,
+    },
+  ];
+
+  /*
+  * Funções de renderização de componentes.
+  * Têm como papel aumentar a legibilidade dividindo o componente extenso em partes menores.
+  */
+  function renderHeader(){
+    return (
+      <View style={styles.headerContainer}>
+        <Header />
+      </View>
+    );
+  }
+
+  function renderActions(){
+    return screenActions.map((v) => {
+      return (
+        <TouchableOpactiy
+          disabled={v.disabled}
+          onPress={() => onDoAction(v.data)}
+          style={[appStyles.btn, { backgroundColor: v.color }]}
+        >
+          <Text style={appStyles.buttonLabel}>{v.label}</Text>
+        </TouchableOpacity>
+      );
+    });
+  }
+
+  // Retorno que determina o que será renderizado na tela
+  return (
+    <View style={styles.container}>
+
+      {renderHeader()}
+
+      <View style={styles.content}>
+
+        <Text style={appStyles.label}>Screen Content</Text>
+
+        {renderActions()}
+
+      </View>
+
+    </View>
+  );
+};
+
+/*
+* StyleSheet do componente, estilos específicos da tela.
+*/
+const styles = StyleSheet.create({
+  container: {
+    width: width
+  },
+  headerContainer: {},
+  content: {},
+  styleExample: {
+    color: '#987'
+  }
+});
+
+//=================================================
+export default Component;
+
+        `,
+      ],
+    },
+    Logic: {
+      BasicStructure: [
+        `// == Component Logic ==
+// Importacoes de pacotes
+import { useState, useEffect, useCallback } from 'react';
+import { useBetween } from 'use-between';
+
+/*
+* É a função que inicializa e exporta todos os states para 
+* a parte visual do componente e outras funções.
+*/
+const useLogicStates = () => {
+    const [text, setText] = useState("");
+    const [isValid, setIsValid] = useState(false);
+    const [data, setData] = useState({});
+
+    return {
+      text,
+      setText,
+      isValid,
+      setIsValid,
+      data,
+      setData
+    };
+};
+
+// Usa-se o useBetween passando a função criada e nomeia-se geralmente "useSharedState"
+export const useSharedState = () => useBetween(useLogicStates);
+
+// Instanciam-se constantes que serão relevantes para as funções abaixo
+const mockData = {
+  approved: true,
+  objects: [
+    {id: 0, name: "first"},
+    {id: 1, name: "second"},
+    {id: 2, name: "third"}
+  ]
+};
+
+// Funções que utilizam o useEffect
+export function useInit(){
+  //Importa-se o useSharedState como a primeira coisa na função
+  const { setData, setIsValid } = useSharedState();
+
+  //Instanciam-se os callbacks necessários para o useEffect abaixo
+  const onDoAction = useOnDoAction();
+
+  useEffect(() => {
+    /*
+    * Cria-se uma função anônima assíncrona que chama a si mesma para que
+    * possamos realizar processos assícronos dentro dela sem quebrar regras de hooks.
+    */
+    (async () => {
+
+      const dadosDoBanco = false;
+      // dadosDoBanco = await requestFromDatabase();
+
+      if(dadosDoBanco){
+        setIsValid(dadosDoBanco.approved);
+        setData(dadosDoBanco);
+      }else{
+        setIsValid(mockData.approved);
+        setData(mockData);
+      }
+    })();
+  }, []);
+}
+
+// Funções/Ações que utilizam o useCallback
+export function useOnDoAction(){
+  const { data, isValid, setText } = useSharedState();
+  
+  /*
+  * Retorna-se a chamada do useCallback, criando a mesma função assícrona dentro de si.
+  * Como segundo parâmetro, passam-se todos os dados dos quais esse callback depende
+  * para que ele seja recriado toda vez que os dados mudarem.
+  */
+  return useCallback(() => {
+    (async () => {
+      if(isValid){
+        setText(data.object[0].name);
+      }else{
+        setText("");
+      }
+    })();
+  }, []);
+}
+
+
+        `,
+      ],
+    },
+    Armazenamento: {
+      ReactRedux: [
+        `// == @store/index.js ==
+// IMPORTAÇÕES
+import { createStore, applyMiddleware } from 'redux';
+import { createLogger } from 'redux-logger';
+import { persistStore, persistReducer } from 'redux-persist';
+// Nesse caso, usaremos o AsyncStorage para persistir os dados em redux
+import AsyncStorage from '@react-native-community/async-storage';
+
+// Daqui virão nossos reducers
+import rootReducer from './reducers/index';
+
+// É a configuração do pacote redux-persist
+const persistConfig = {
+    key: 'root',
+    //Passamos o nosso método de armazenamento persistido de escolha
+    storage: AsyncStorage,
+    // Passamos o redux que queremos salvar em específico
+    whitelist: [
+        'data',
+    ],
+};
+
+// Aqui criamos os reducers persistidos com os quais criaremos a Store.
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+// Criação da Store e aplicação de console.logs para cada alteração no state
+const store = createStore(
+    persistedReducer,
+    applyMiddleware(
+        createLogger(),
+    ),
+);
+
+// Implementação final da persistência do state da Store
+const persistor = persistStore(store);
+
+export {
+  store,
+  persistor,
+};
+        `,
+        `// == @store/reducers/index.js ==
+import { combineReducers } from 'redux';
+import {
+  SET_STATE,
+} from '@store/consts.js';
+
+const INITIAL_STATE = {
+  value: ""
+};
+
+function data(state = INITIAL_STATE, action){
+  const { payload } = action;
+
+  switch(action.type){
+    case SET_STATE:
+      return {
+        ...state,
+        value: payload
+      }
+    
+    default:
+      return state;
+  }
+}
+
+const rootReducer = combineReducers({
+  data,
+});
+export default rootReducer;
+        `,
+        `// == @store/actions/index.js ==
+
+import {
+  SET_STATE
+} from '@store/actions.js';
+
+export const actionSetState = (payload) => ({
+  type: SET_STATE,
+  payload
+});
+        `,
+        `// == @main/App.js ==
+
+TODO
+
+        `,
+      ],
+      ReactUseMemo: [``],
+      ReactUseContext: [``],
+      AsyncStorage: [``],
+      SQLite: [``],
+    },
+  },
   WorkspacePreparation: {
     Mac: {
       EnvironmentVariables: [
