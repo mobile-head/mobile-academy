@@ -188,6 +188,27 @@ const Mac = () => {
                         </p>
                       </li>
                       <li class="list-group-item">
+                        <h5 class="list-group-item-heading">Ruby & Gem</h5>
+                        <p class="list-group-item-text" className="text-muted">
+                          Com o Homebrew instalado, rode os comandos em um
+                          terminal:
+                          <pre> brew install ruby</pre>
+                        </p>
+                      </li>
+                      <li class="list-group-item">
+                        <h5 class="list-group-item-heading">CocoaPods</h5>
+                        <p class="list-group-item-text" className="text-muted">
+                          Com o gerenciador de pacotes do Ruby "gem" instalado
+                          (testar utilizando "gem --version"), rodar o comando:
+                          <pre> sudo gem install cocoapods</pre>
+                          Caso ele não funcione, rodar:
+                          <pre>
+                            {" "}
+                            sudo gem install -n /usr/local/bin cocoapods
+                          </pre>
+                        </p>
+                      </li>
+                      <li class="list-group-item">
                         <h5 class="list-group-item-heading">
                           Emulador Android - API 28/30
                         </h5>
