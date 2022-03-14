@@ -188,7 +188,7 @@ class ESLint extends Component {
                       <h7 class="text-muted">- Instalar ESLint no VSCode</h7>
                     </a>
                     <br /> <br />
-                    <p>
+                    <p id="OpenVSCodeSettings">
                       Após instalarmos a extensão do ESLint e ela estar
                       habilitada, precisamos ir para o arquivo de configurações
                       do VSCode, que pode ser acessado apertando{" "}
@@ -228,8 +228,8 @@ class ESLint extends Component {
                       o ESLint com nossas configurações.
                     </p>
                     <br />
-                    <h7 id="ESLintUse" class="font-weight-bold">
-                      Utilizando o ESLint
+                    <h7 id="ESLintAction" class="font-weight-bold">
+                      ESLint em ação
                     </h7>
                     <p>
                       Para vermos o ESLint em ação podemos habilitar a
@@ -273,6 +273,72 @@ class ESLint extends Component {
                       o erro, qual a regra e nos direcionar para este erro de
                       forma rápida.
                     </p>
+                    <br />
+                    <h7 id="RunningESLintTask" class="font-weight-bold">
+                      Utilizando a task do ESLint
+                    </h7>
+                    <p>
+                      Podemos precisar executar a task do ESLint em todo o
+                      projeto, o motivo de executar essa task é que em alguns
+                      momentos precisamos executar o ESLint novamente como uma
+                      espécie de atualização dos erros ou warnings,
+                      principalmente quando o ESLint é executado no projeto e é
+                      encontrado uma quantidade muito grande de erros dentro
+                      projeto, nessa situação o ESLint pode apresentar uma certa
+                      dificuldade na atualização dos problemas que são
+                      apresentados. Para executar a task do ESLint podemos
+                      apertar <h7 class="text-muted">Command + P</h7> no Mac, ou{" "}
+                      <h7 class="text-muted">Ctrl + P</h7> no windows, será
+                      aberto um modal, digite
+                      <h7 class="text-muted"> {"> "}Run Task</h7> e clique na
+                      opção <h7 class="text-muted">Tasks: Run Task</h7>:
+                    </p>
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/RunTaskVsCode.png")}
+                      />
+                    </div>
+                    <br />
+                    <p>
+                      Em seguida clique no pacote ESLint para exibir as tasks do
+                      ESLint:
+                    </p>
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/RunTaskVsCodePackages.png")}
+                      />
+                    </div>
+                    <br />
+                    <p>
+                      Agora podemos executar a task {"("}eslint: lint whole
+                      folder{")"}:
+                    </p>
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/RunESLintTask.png")}
+                      />
+                    </div>
+                    <br />
+                    <p>
+                      Como resultado a task será executada e teremos uma visão
+                      semelhante a esta no terminal, mostrando todos os erros
+                      que foram encontrados no projeto e a view de Problems será
+                      atualizada:
+                    </p>
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/ResultOfESLintTask.png")}
+                      />
+                    </div>
+                    <br />
                     <br />
                     <h7 id="ErrorResolve" class="font-weight-bold">
                       Resolvendo erros
@@ -404,8 +470,14 @@ class ESLint extends Component {
                       </li>
 
                       <li>
-                        <a className="text-muted" href="#ESLintUse">
-                          Utilizando o ESLint
+                        <a className="text-muted" href="#ESLintAction">
+                          ESLint em ação
+                        </a>
+                      </li>
+
+                      <li>
+                        <a className="text-muted" href="#RunningESLintTask">
+                          Utilizando a task do ESLint
                         </a>
                       </li>
 

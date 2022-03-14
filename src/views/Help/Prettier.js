@@ -10,7 +10,7 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 // core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
-import { CodeExamplesStructure } from "../../variables/codeExamplesStructure";
+import { CodeExamplePrettier } from "variables/codeExamplePrettier.js";
 
 class Prettier extends Component {
   render() {
@@ -36,110 +36,137 @@ class Prettier extends Component {
                 <CardBody>
                   <p>
                     <h6>
-                      <a id="newProjects">
-                        A respeito da criação de novos projetos mobile
+                      <a id="Prettier">
+                        A respeito da estilização global do código dos projetos
                       </a>
                     </h6>
-                    <h7
-                      id="createProjectsWithoutTemplate"
-                      class="font-weight-bold"
-                    >
-                      Criando projetos sem template
+                    <h7 id="whyPrettier" class="font-weight-bold">
+                      O que é e porque utilizar o Prettier
                     </h7>
                     <p>
-                      Os projetos são criados utilizando o react-native-cli:
+                      O Prettier é uma ferramenta responsável por definir uma
+                      estilização global para nosso código, como identação,
+                      vírgulas, ponto e vírgulas, aspas duplas ou simples,
+                      dentre outras estilizações que podem ser definidas. O
+                      prettier nos ajuda com:
+                    </p>
+                    <ul>
+                      <li>
+                        <h7>
+                          Manter o padrão de código em relação a estilo, nos
+                          permitindo criar um estilo global para nossos
+                          projetos.
+                        </h7>
+                      </li>
+                      <li>
+                        <h7>
+                          Nos permite automatizar o estilo do nosso código sem
+                          que tenhamos que nos preocupar com um monte de regras
+                          de estilo.
+                        </h7>
+                      </li>
+                      <li>
+                        <h7>
+                          Integrado com o Husky é capaz de resolver erros de
+                          estilização automaticamente antes mesmo que seja
+                          realizado um commit.
+                        </h7>
+                      </li>
+                    </ul>
+                    <br />
+                    <h7 id="PrettierIntegration" class="font-weight-bold">
+                      Integrando o Prettier com o projeto
+                    </h7>
+                    <p>
+                      Para integrar o Prettier com o projeto instale o Prettier
+                      com o seguinte comando para instalá-lo como uma
+                      devDependencies no projeto:
                     </p>
                     <pre>
                       <SyntaxHighlighter
                         language="js"
                         style={a11yDark}
                         PreTag="div"
-                        children={CodeExamplesStructure.initProject}
+                        children={CodeExamplePrettier.installPrettier}
                       />
                     </pre>
-                    <h7
-                      id="createProjectsWithTemplate"
-                      class="font-weight-bold"
-                    >
-                      Criando projetos com template
-                    </h7>
                     <p>
-                      Os projetos também podem ser criados utilizando o template
-                      padrão utilizado na Bravo:
+                      Em seguida crie um arquivo chamado{" "}
+                      <h7 class="text-muted">.prettierrc.json</h7> na raiz do
+                      projeto com as seguintes configurações:
                     </p>
                     <pre>
                       <SyntaxHighlighter
                         language="js"
                         style={a11yDark}
                         PreTag="div"
-                        children={CodeExamplesStructure.initProjectWithTemplate}
+                        children={CodeExamplePrettier.prettierConfiguration}
                       />
                     </pre>
                     <p>
-                      Este{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://github.com/Kalebesamuel/react-native-template"
-                        target="_blank"
-                      >
-                        template
-                      </a>{" "}
-                      conta com a grande parte das bibliotecas usadas em todos
-                      os projetos, junto com styledComponents, components,{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://developer.android.com/studio/build/build-variants"
-                        target="_blank"
-                      >
-                        divisão de ambientes
-                      </a>{" "}
-                      em DEV/QAS/PRD, configurações do{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://commitizen-tools.github.io/commitizen/"
-                        target="_blank"
-                      >
-                        commitzen,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://eslint.org/"
-                        target="_blank"
-                      >
-                        ESLint,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://prettier.io/"
-                        target="_blank"
-                      >
-                        Prettier,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://typicode.github.io/husky/#/"
-                        target="_blank"
-                      >
-                        Husky,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://bitbucket.org/product/br/features/pipelines"
-                        target="_blank"
-                      >
-                        Bitbucket Pipeline,
-                      </a>{" "}
-                      dentre outras configurações que serão abordadas por aqui.
-                      Opte sempre preferencialmente por iniciar projetos atráves
-                      deste template, para que não seja necessário realizar as
-                      configurações manualmente.
+                      Essas configurações definem como o nosso código será
+                      estilizado.
+                    </p>
+                    <br />
+                    <h7 id="PrettierVSCodeIntegration" class="font-weight-bold">
+                      Integrando o Prettier com o VSCode
+                    </h7>
+                    <p>
+                      Para que o Prettier consiga ter efeito sobre o nosso
+                      ambiente de desenvolvimento e interagir com o VSCode,
+                      precisamos realizar algumas alterações na configuração do
+                      VSCode. Vamos iniciar por editar as configurações dentro
+                      de settings.json, caso não saiba como acessar essa parte,
+                      verifique na sessão ESLint através do link abaixo:
+                    </p>
+                    <a
+                      target="_blank"
+                      href="/admin/help/ESLint/#OpenVSCodeSettings"
+                    >
+                      <h7 class="text-muted">
+                        - Acessando o json de configurações do VSCode
+                      </h7>
+                    </a>
+                    <br />
+                    <br />
+                    <p>
+                      Dentro do arquivo{" "}
+                      <h7 class="text-muted">settings.json </h7>
+                      adicione o seguinte conteúdo:
+                    </p>
+
+                    <pre>
+                      <SyntaxHighlighter
+                        language="js"
+                        style={a11yDark}
+                        PreTag="div"
+                        children={CodeExamplePrettier.settingsJsonPrettier}
+                      />
+                    </pre>
+
+                    <br />
+                    <h7 id="PrettierAction" class="font-weight-bold">
+                      Prettier em ação
+                    </h7>
+                    <p>
+                      Para vermos o Prettier em ação podemos dispará-lo salvando
+                      o arquivo, abaixo vemos um simples uso dele:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/PrettierInAction.gif")}
+                      />
+                    </div>
+                    <br />
+
+                    <p>
+                      Na sessão Husky há um passo importante demonstrando um
+                      melhor uso do Prettier de uma forma automatizada,
+                      impedindo que códigos sem a devida concordância com as
+                      regras de estilização do projeto venha a ser commitado.
                     </p>
                   </p>
                 </CardBody>
@@ -161,24 +188,31 @@ class Prettier extends Component {
 
                 <CardBody>
                   <p>
-                    <a className="text-muted" href="#newProjects">
-                      - A respeito da criação de novos projetos mobile
+                    <a className="text-muted" href="#Prettier">
+                      - A respeito da estilização global do código dos projetos
                     </a>
                     <ul>
                       <li>
-                        <a
-                          className="text-muted"
-                          href="#createProjectsWithoutTemplate"
-                        >
-                          Criando projetos sem template
+                        <a className="text-muted" href="#whyPrettier">
+                          O que é e porque utilizar o Prettier
+                        </a>
+                      </li>
+                      <li>
+                        <a className="text-muted" href="#PrettierIntegration">
+                          Integrando o Prettier com o projeto
                         </a>
                       </li>
                       <li>
                         <a
                           className="text-muted"
-                          href="#createProjectsWithTemplate"
+                          href="#PrettierVSCodeIntegration"
                         >
-                          Criando projetos com template
+                          Integrando o Prettier com o VSCode
+                        </a>
+                      </li>
+                      <li>
+                        <a className="text-muted" href="#PrettierAction">
+                          Prettier em ação
                         </a>
                       </li>
                     </ul>
