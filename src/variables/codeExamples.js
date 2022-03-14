@@ -133,7 +133,9 @@ export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 #MY VARIABLES
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
+#SUBSTITUIR VERSAO
 export ANDROID_HOME=/Users/matheus.quirino/Library/Android/sdk/
+#SUBSTITUIR NOME DE USUARIO
 
 #export ORACLE_HOME=/usr/local/lib/instantclient
 export ORACLE_HOME=/opt/oracle/instantclient
