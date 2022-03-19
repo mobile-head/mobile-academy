@@ -151,7 +151,9 @@ const EvologMotorista = () => {
 
           <Col md="4">
             <Card className="card-use">
-              <CardBody>
+              <CardBody
+                style={{ alignItems: "center", justifyContent: "center" }}
+              >
                 <video
                   id="video"
                   class="z-depth-1"

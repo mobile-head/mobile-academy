@@ -102,7 +102,7 @@ class Pipeline extends Component {
                         href="https://commitizen-tools.github.io/commitizen/"
                         target="_blank"
                       >
-                        commitzen,
+                        commitizen,
                       </a>{" "}
                       <a
                         class="list-group-item-text"
