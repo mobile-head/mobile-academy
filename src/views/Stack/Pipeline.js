@@ -10,7 +10,7 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 // core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
-import { CodeExamplesStructure } from "../../variables/codeExamplesStructure";
+import { CodeExamplePipeline } from "../../variables/codeExamplePipeline";
 
 class Pipeline extends Component {
   render() {
@@ -30,117 +30,308 @@ class Pipeline extends Component {
                     qualidade que aborda vários aspectos.
                   </p>
 
-                  <h5>Geração de apk utilizando Pipelines</h5>
+                  <h5>Configurando Pipelines</h5>
                 </CardHeader>
 
                 <CardBody>
                   <p>
                     <h6>
-                      <a id="newProjects">
-                        A respeito da criação de novos projetos mobile
+                      <a id="pipelines">
+                        A respeito do fluxo de CI/CD utilizando Bitbucket
+                        Pipelines
                       </a>
                     </h6>
-                    <h7
-                      id="createProjectsWithoutTemplate"
-                      class="font-weight-bold"
-                    >
-                      Criando projetos sem template
+                    <h7 id="whyPipelines" class="font-weight-bold">
+                      O que é e porque utilizar pipelines
                     </h7>
                     <p>
-                      Os projetos são criados utilizando o react-native-cli:
+                      Pipelines são ações dinâmicas e com alto poder de
+                      configuração que são ativadas sempre que é realizado um
+                      merge nas branchs que definirmos em nosso arquivo de
+                      configurações, geralmente os gerenciadores de repositórios
+                      como o Bitbucket já contam com essa feature nativamente,
+                      sendo possível utilizá-la ou integrar o repositório com
+                      outra ferramenta de CI/CD. Pipelines trazem benéficios
+                      como:
                     </p>
+
+                    <ul>
+                      <li>
+                        Definir ações amplamente customizáveis que são
+                        disparadas ao realizar merge nas branchs que definirmos.
+                      </li>
+                      <li>
+                        Conseguimos utilizá-la em basicamente qualquer projeto
+                        já que conseguimos utilizar diversar imagens das mais
+                        variadas configurações.
+                      </li>
+                      <li>
+                        Automação de processos de CI/CD, como testes, análise de
+                        código, geração de apks e deploy para web stores.
+                      </li>
+                    </ul>
+
+                    <br />
+                    <br />
+
+                    <h7 id="creatingAppPasswords" class="font-weight-bold">
+                      Criando app passwords
+                    </h7>
+
+                    <p>
+                      Agora vamos configurar e ativar a pipeline no Bitbucket,
+                      no primeiro passo precisamos um criar um{" "}
+                      <h7 class="text-muted">App password</h7> que será
+                      necessário depois, para criar o app password, acesse este
+                      link:
+                    </p>
+
+                    <a
+                      target="_blank"
+                      className="text-muted"
+                      href="https://bitbucket.org/account/settings/app-passwords/"
+                    >
+                      - Creating app passwords
+                    </a>
+
+                    <br />
+                    <br />
+                    <p>
+                      Clique em <h7 class="text-muted">Create app password</h7>:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/createAppPassword.png")}
+                      />
+                    </div>
+
+                    <br />
+
+                    <p>
+                      Agora precisamos selecionar todas as permissões que
+                      queremos que a app password conceda acesso, no nosso caso
+                      iremos selecionar tudo:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/createAppPasswordPermissions.png")}
+                      />
+                    </div>
+
+                    <br />
+
+                    <p>
+                      Após isso clique em <h7 class="text-muted">Create</h7> e
+                      pronto, teremos nossa app password criada, copie e guarde
+                      ela em um local seguro pois não será possível vê-la
+                      novamente.
+                    </p>
+
+                    <br />
+                    <br />
+
+                    <h7
+                      id="creatingEnvironmentVariables"
+                      class="font-weight-bold"
+                    >
+                      Criando variáveis de ambiente
+                    </h7>
+
+                    <p>
+                      Agora vá até o repositório em que deseja configurar a
+                      pipeline e clique na opção{" "}
+                      <h7 class="text-muted">Respository Settings</h7>{" "}
+                      encontrada na Sidebar, porém para poder visualizar essa
+                      configuração é necessário ter acesso administrado ao
+                      repositório:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/repositorySettings.png")}
+                      />
+                    </div>
+                    <br />
+
+                    <p>
+                      Na Sidebar, vá a sessão{" "}
+                      <h7 class="text-muted"> Pipelines</h7> e clique na opção{" "}
+                      <h7 class="text-muted"> Repository variables</h7>:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/creatingEnvironmentVariables.png")}
+                      />
+                    </div>
+
+                    <br />
+
+                    <p>
+                      É necessário que seja criado duas variáveis de ambiente,
+                      chamadas{" "}
+                      <h7 class="text-muted">BITBUCKET_APP_PASSWORD</h7> e{" "}
+                      <h7 class="text-muted">BITBUCKET_USERNAME</h7>, onde seus
+                      valores serão a app password que geramos no passo anterior
+                      e o nome do usuário, no caso da variável que conterá a App
+                      Password, devemos marcá-la como{" "}
+                      <h7 class="text-muted">secured</h7>, que significa que não
+                      será possível visualizar o seu conteúdo nunca mais, apenas
+                      a acessaremos atráves de seu nome. Feito isso podemos
+                      seguir para os próximos passos.
+                    </p>
+
+                    <br />
+                    <br />
+
+                    <h7 id="enablingPipeline" class="font-weight-bold">
+                      Habilitando a bitbucket pipeline
+                    </h7>
+
+                    <p>
+                      Agora vamos ainda dentro de Repository Settings na sessão
+                      Pipelines acessar a opção{" "}
+                      <h7 class="text-muted">Settings</h7> e habilitar a
+                      pipeline:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/enablingPipeline.png")}
+                      />
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <h7
+                      id="creatingDeploymentEnvironments"
+                      class="font-weight-bold"
+                    >
+                      Criando ambientes de deployment
+                    </h7>
+
+                    <p>
+                      Precisamos agora criar nossos ambientes de deployment para
+                      que nossa próxima configuração funcione corretamente, para
+                      criar ambientes de deployment vá em Repository Settings na
+                      sessão Pipelines e acesse a opção{" "}
+                      <h7 class="text-muted">Deployments</h7>. Delete os
+                      ambientes padrões e crie dois ambientes de deployment, qas
+                      e prd, qas ficará como ambiente de staging e prd ficará
+                      como ambiente de produção. Teremos uma visão final assim:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/creatingDeployments.png")}
+                      />
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+
+                    <h7
+                      id="configuringPipelineActions"
+                      class="font-weight-bold"
+                    >
+                      Configurando as ações da pipeline
+                    </h7>
+
+                    <p>
+                      Para configurar as ações da nossa pipeline precisamos
+                      criar na raiz do nosso projeto um arquivo chamado{" "}
+                      <h7 class="text-muted">bitbucket-pipeline.yml</h7>. Nosso
+                      arquivo instalará as dependências que precisamos, definirá
+                      o ambiente de acordo com a branch que estiver, ou seja, se
+                      estivermos em qas será gerada uma apk apontando para qas
+                      se estivermos em master será gerada uma apk apontando para
+                      prd, no final será feito o upload desta apk para a área de
+                      downloads do Bibucket onde pode ser baixada e enviada ao
+                      QA/Key User. Este é só o fluxo atual pra qual a pipeline é
+                      utilizada automatizando a geração de apk e reduzindo o uso
+                      de recursos da máquina, podemos fazer muito mais com
+                      pipelines. Dentro do arquivo que criamos, coloque o
+                      seguinte conteúdo:{" "}
+                    </p>
+
                     <pre>
                       <SyntaxHighlighter
                         language="js"
                         style={a11yDark}
                         PreTag="div"
-                        children={CodeExamplesStructure.initProject}
+                        children={CodeExamplePipeline.bitbucketYml}
                       />
                     </pre>
-                    <h7
-                      id="createProjectsWithTemplate"
-                      class="font-weight-bold"
-                    >
-                      Criando projetos com template
+
+                    <br />
+                    <br />
+                    <h7 id="pipelineAction" class="font-weight-bold">
+                      Pipeline em ação
                     </h7>
+
                     <p>
-                      Os projetos também podem ser criados utilizando o template
-                      padrão utilizado na Bravo:
+                      Para que a pipeline seja disparada seguinda a configuração
+                      que criamos, apenas precisamos dar push do nosso código
+                      para qas ou master, ou para qualquer outra branch e
+                      concluir um merge para alguma dessas branchs, feito isso
+                      conseguiremos visualizar clicando em Pipelines na sidebar
+                      do repositório as nossas pipelines executando/executadas:
                     </p>
-                    <pre>
-                      <SyntaxHighlighter
-                        language="js"
-                        style={a11yDark}
-                        PreTag="div"
-                        children={CodeExamplesStructure.initProjectWithTemplate}
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/pipelineRunned.png")}
                       />
-                    </pre>
+                    </div>
+                    <br />
+
                     <p>
-                      Este{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://github.com/Kalebesamuel/react-native-template"
-                        target="_blank"
-                      >
-                        template
-                      </a>{" "}
-                      conta com a grande parte das bibliotecas usadas em todos
-                      os projetos, junto com styledComponents, components,{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://developer.android.com/studio/build/build-variants"
-                        target="_blank"
-                      >
-                        divisão de ambientes
-                      </a>{" "}
-                      em DEV/QAS/PRD, configurações do{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://commitizen-tools.github.io/commitizen/"
-                        target="_blank"
-                      >
-                        commitizen,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://eslint.org/"
-                        target="_blank"
-                      >
-                        ESLint,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://prettier.io/"
-                        target="_blank"
-                      >
-                        Prettier,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://typicode.github.io/husky/#/"
-                        target="_blank"
-                      >
-                        Husky,
-                      </a>{" "}
-                      <a
-                        class="list-group-item-text"
-                        className="text-muted"
-                        href="https://bitbucket.org/product/br/features/pipelines"
-                        target="_blank"
-                      >
-                        Bitbucket Pipeline,
-                      </a>{" "}
-                      dentre outras configurações que serão abordadas por aqui.
-                      Opte sempre preferencialmente por iniciar projetos atráves
-                      deste template, para que não seja necessário realizar as
-                      configurações manualmente.
+                      Ao clicarmos em qualquer pipeline conseguiremos ver os
+                      passos executados/executando:
                     </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/pipelineRunning.png")}
+                      />
+                    </div>
+                    <br />
+
+                    <p>
+                      Depois da pipeline ser executada, se houver sucesso
+                      conseguiremos visualizar a apk que foi gerada na sessão{" "}
+                      <h7 class="text-muted">Downloads</h7> acessada pela
+                      sidebar do repositório:
+                    </p>
+
+                    <div>
+                      <img
+                        height="30%"
+                        alt="..."
+                        src={require("assets/img/apkDownloads.png")}
+                      />
+                    </div>
                   </p>
                 </CardBody>
               </Card>
@@ -161,24 +352,59 @@ class Pipeline extends Component {
 
                 <CardBody>
                   <p>
-                    <a className="text-muted" href="#newProjects">
-                      - A respeito da criação de novos projetos mobile
+                    <a className="text-muted" href="#pipelines">
+                      - A respeito do fluxo de CI/CD utilizando Bitbucket
+                      Pipelines
                     </a>
                     <ul>
                       <li>
-                        <a
-                          className="text-muted"
-                          href="#createProjectsWithoutTemplate"
-                        >
-                          Criando projetos sem template
+                        <a className="text-muted" href="#whyPipelines">
+                          O que é e porque utilizar pipelines
                         </a>
                       </li>
+
+                      <li>
+                        <a className="text-muted" href="#creatingAppPasswords">
+                          Criando app passwords
+                        </a>
+                      </li>
+
                       <li>
                         <a
                           className="text-muted"
-                          href="#createProjectsWithTemplate"
+                          href="#creatingEnvironmentVariables"
                         >
-                          Criando projetos com template
+                          Criando variáveis de ambiente
+                        </a>
+                      </li>
+
+                      <li>
+                        <a className="text-muted" href="#enablingPipeline">
+                          Habilitando a bitbucket pipeline
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          className="text-muted"
+                          href="#creatingDeploymentEnvironments"
+                        >
+                          Criando ambientes de deployment
+                        </a>
+                      </li>
+
+                      <li>
+                        <a
+                          className="text-muted"
+                          href="#configuringPipelineActions"
+                        >
+                          Configurando as ações da pipeline
+                        </a>
+                      </li>
+
+                      <li>
+                        <a className="text-muted" href="#pipelineAction">
+                          Pipeline em ação
                         </a>
                       </li>
                     </ul>

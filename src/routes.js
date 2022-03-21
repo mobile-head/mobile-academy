@@ -424,7 +424,7 @@ var dashRoutes = [
     invisible: true,
   },
   {
-    path: "/stack/Commitizen",
+    path: "/stack/Pipeline",
     name: "Pipeline",
     component: Pipeline,
     layout: "/admin",
