@@ -16,7 +16,7 @@ import Evolog4PL from "./views/Overview/Evolog4PL.js";
 //-------------------------------------------------------------------------
 import Code from "./views/Documentation/Code.js";
 import Components from "./views/Documentation/Components.js";
-import Structure from "./views/Documentation/Structure.js";
+import ProjectStructure from "./views/Documentation/ProjectStructure.js";
 
 //-------------------------------------------------------------------------
 import CreatingProject from "./views/Stack/CreatingProject.js";
@@ -125,9 +125,9 @@ var dashRoutes = [
         layout: "/admin",
       },
       {
-        path: "/documentation/Structure",
-        name: "Estruturação",
-        component: Structure,
+        path: "/documentation/ProjectStructure",
+        name: "Project Structure",
+        component: ProjectStructure,
         layout: "/admin",
       },
     ],
@@ -340,9 +340,9 @@ var dashRoutes = [
     invisible: true,
   },
   {
-    path: "/documentation/Structure",
+    path: "/documentation/ProjectStructure",
     name: "Estruturação",
-    component: Structure,
+    component: ProjectStructure,
     layout: "/admin",
     invisible: true,
   },
