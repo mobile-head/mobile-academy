@@ -97,7 +97,12 @@ class ProjectStructure extends Component {
                     </h7>
 
                     <p>
-                      É comum na arquitetura de projetos popular do react-native ser mantido a view e a logic no mesmo lugar, bem diferente da arquitetura padrão para Android Nativo (Java/Kotlin) por exemplo, que mantém toda a parte visual em xml's e toda a parte lógica de forma separada e ainda de forma segregada.
+                      É comum na arquitetura de projetos popular do react-native
+                      ser mantido a view e a logic no mesmo lugar, bem diferente
+                      da arquitetura padrão para Android Nativo (Java/Kotlin)
+                      por exemplo, que mantém toda a parte visual em xml's e
+                      toda a parte lógica de forma separada e ainda de forma
+                      segregada.
                     </p>
 
                     <br />
@@ -150,6 +155,12 @@ class ProjectStructure extends Component {
                       <li>
                         <a className="text-muted" href="#commomPattern">
                           Tudo junto e misturado: Um pouco sobre o padrão comum
+                        </a>
+                      </li>
+
+                      <li>
+                        <a className="text-muted" href="#commomPattern">
+                          AAAAAAAAAAAAA
                         </a>
                       </li>
                     </ul>
