@@ -25,15 +25,16 @@ import "assets/scss/now-ui-dashboard.scss?v1.4.0";
 import "assets/css/demo.css";
 
 import AdminLayout from "layouts/Admin.js";
+import { HashRouter } from "react-router-dom";
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
-  <Router history={hist}>
+  <HashRouter>
     <Switch>
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Redirect to="/admin/overview/EvologMotorista" />
     </Switch>
-  </Router>,
+  </HashRouter>,
   document.getElementById("root")
 );
