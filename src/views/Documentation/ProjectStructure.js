@@ -157,12 +157,6 @@ class ProjectStructure extends Component {
                           Tudo junto e misturado: Um pouco sobre o padrão comum
                         </a>
                       </li>
-
-                      <li>
-                        <a className="text-muted" href="#commomPattern">
-                          AAAAAAAAAAAAA
-                        </a>
-                      </li>
                     </ul>
                   </p>
                 </CardBody>
