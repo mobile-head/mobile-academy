@@ -38,8 +38,9 @@ class Sidebar extends React.Component {
   }
 
   openDropdown(key) {
+    this.state.dropdownActive =
+      key !== this.state.key ? true : !this.state.dropdownActive;
     this.state.key = key;
-    this.state.dropdownActive = !this.state.dropdownActive;
   }
 
   renderDropdown(prop, key, parentKey) {
@@ -82,6 +83,15 @@ class Sidebar extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    console.log(
+      "Key: ",
+      this.state.key,
+      "DropdownActived: ",
+      this.state.dropdownActive
+    );
+  }
+
   componentWillUnmount() {
     if (navigator.platform.indexOf("Win") > -1) {
       ps.destroy();
@@ -111,6 +121,11 @@ class Sidebar extends React.Component {
               if (!prop.invisible)
                 return (
                   <li
+                    onClick={
+                      prop?.dropdown?.length > 0
+                        ? () => this.openDropdown(parentKey)
+                        : () => null
+                    }
                     className={
                       this.activeRoute(prop.layout + prop.path) +
                       (prop.pro ? " active active-pro" : "")
@@ -118,11 +133,6 @@ class Sidebar extends React.Component {
                     key={parentKey}
                   >
                     <NavLink
-                      onClick={
-                        prop?.dropdown?.length > 0
-                          ? () => this.openDropdown(parentKey)
-                          : () => null
-                      }
                       to={prop.layout + prop.path}
                       className="nav-link"
                       activeClassName="active"
