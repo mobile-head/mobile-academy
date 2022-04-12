@@ -109,7 +109,7 @@ class Sidebar extends React.Component {
           </a>
 
           <a href="#" className="simple-text logo-normal" target="_blank">
-            Code Haven
+            Mobile Academy
           </a>
         </div>
 
