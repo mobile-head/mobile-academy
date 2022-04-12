@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/MobileHaven/static/css/main.d3fb8eb2.chunk.css",
-    "main.js": "/MobileHaven/static/js/main.3dfa60f6.chunk.js",
-    "main.js.map": "/MobileHaven/static/js/main.3dfa60f6.chunk.js.map",
+    "main.js": "/MobileHaven/static/js/main.7dd1b71a.chunk.js",
+    "main.js.map": "/MobileHaven/static/js/main.7dd1b71a.chunk.js.map",
     "runtime-main.js": "/MobileHaven/static/js/runtime-main.11c44fa9.js",
     "runtime-main.js.map": "/MobileHaven/static/js/runtime-main.11c44fa9.js.map",
     "static/css/2.b5f3909f.chunk.css": "/MobileHaven/static/css/2.b5f3909f.chunk.css",
-    "static/js/2.90922116.chunk.js": "/MobileHaven/static/js/2.90922116.chunk.js",
-    "static/js/2.90922116.chunk.js.map": "/MobileHaven/static/js/2.90922116.chunk.js.map",
+    "static/js/2.78edaeac.chunk.js": "/MobileHaven/static/js/2.78edaeac.chunk.js",
+    "static/js/2.78edaeac.chunk.js.map": "/MobileHaven/static/js/2.78edaeac.chunk.js.map",
     "index.html": "/MobileHaven/index.html",
-    "precache-manifest.558a76c77aa03b6d0a1e6fe47a1d4e6a.js": "/MobileHaven/precache-manifest.558a76c77aa03b6d0a1e6fe47a1d4e6a.js",
+    "precache-manifest.d0f363367f8548d010d85c2fad3547c8.js": "/MobileHaven/precache-manifest.d0f363367f8548d010d85c2fad3547c8.js",
     "service-worker.js": "/MobileHaven/service-worker.js",
     "static/css/2.b5f3909f.chunk.css.map": "/MobileHaven/static/css/2.b5f3909f.chunk.css.map",
     "static/css/main.d3fb8eb2.chunk.css.map": "/MobileHaven/static/css/main.d3fb8eb2.chunk.css.map",
-    "static/js/2.90922116.chunk.js.LICENSE.txt": "/MobileHaven/static/js/2.90922116.chunk.js.LICENSE.txt",
-    "static/js/main.3dfa60f6.chunk.js.LICENSE.txt": "/MobileHaven/static/js/main.3dfa60f6.chunk.js.LICENSE.txt",
+    "static/js/2.78edaeac.chunk.js.LICENSE.txt": "/MobileHaven/static/js/2.78edaeac.chunk.js.LICENSE.txt",
+    "static/js/main.7dd1b71a.chunk.js.LICENSE.txt": "/MobileHaven/static/js/main.7dd1b71a.chunk.js.LICENSE.txt",
     "static/media/AnalyticsEvents.png": "/MobileHaven/static/media/AnalyticsEvents.9670a67b.png",
     "static/media/AnalyticsLogFlow.png": "/MobileHaven/static/media/AnalyticsLogFlow.6a4a4c1f.png",
     "static/media/AnalyticsOverview.png": "/MobileHaven/static/media/AnalyticsOverview.befbd275.png",
@@ -55,6 +55,8 @@
     "static/media/enablingPipeline.png": "/MobileHaven/static/media/enablingPipeline.383cd885.png",
     "static/media/environmentsReactNative.png": "/MobileHaven/static/media/environmentsReactNative.92f5c440.png",
     "static/media/finalVisionFolders.png": "/MobileHaven/static/media/finalVisionFolders.5a0e3e35.png",
+    "static/media/globalHooksFolder.png": "/MobileHaven/static/media/globalHooksFolder.481d4535.png",
+    "static/media/logicViewFolderStructure.png": "/MobileHaven/static/media/logicViewFolderStructure.6a30b054.png",
     "static/media/logo-white.svg": "/MobileHaven/static/media/logo-white.eec7c7f6.svg",
     "static/media/mike.jpg": "/MobileHaven/static/media/mike.aab414f7.jpg",
     "static/media/now-ui-dashboard.scss?v1.4.0": "/MobileHaven/static/media/nucleo-outline.8ebec31f.woff2",
@@ -66,8 +68,8 @@
   "entrypoints": [
     "static/js/runtime-main.11c44fa9.js",
     "static/css/2.b5f3909f.chunk.css",
-    "static/js/2.90922116.chunk.js",
+    "static/js/2.78edaeac.chunk.js",
     "static/css/main.d3fb8eb2.chunk.css",
-    "static/js/main.3dfa60f6.chunk.js"
+    "static/js/main.7dd1b71a.chunk.js"
   ]
 }
