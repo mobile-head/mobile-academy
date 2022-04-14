@@ -50,6 +50,7 @@ class Sidebar extends React.Component {
       <div>
         {this.state.dropdownActive && this.state.key === parentKey && (
           <li
+            onClick={() => this.openDropdown(parentKey)}
             className={
               this.activeRoute(prop.layout + prop.path) +
               (prop.pro ? " active active-pro" : "")

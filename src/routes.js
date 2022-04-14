@@ -17,6 +17,7 @@ import Evolog4PL from "./views/Overview/Evolog4PL.js";
 import Code from "./views/Documentation/Code.js";
 import Components from "./views/Documentation/Components.js";
 import ProjectStructure from "./views/Documentation/ProjectStructure.js";
+import Workflow from "./views/Documentation/Workflow.js";
 
 //-------------------------------------------------------------------------
 import CreatingProject from "./views/Stack/CreatingProject.js";
@@ -57,30 +58,35 @@ var dashRoutes = [
         name: "Evolog Motorista",
         component: EvologMotorista,
         layout: "/admin",
+        dropdownKeepActived: true,
       },
       {
         path: "/overview/EvologComercial",
         name: "Evolog Comercial",
         component: EvologComercial,
         layout: "/admin",
+        dropdownKeepActived: true,
       },
       {
         path: "/overview/EvologChecklist",
         name: "Evolog Checklist",
         component: EvologChecklist,
         layout: "/admin",
+        dropdownKeepActived: true,
       },
       {
         path: "/overview/EvologCanhoto",
         name: "Evolog Canhoto",
         component: EvologCanhoto,
         layout: "/admin",
+        dropdownKeepActived: true,
       },
       {
         path: "/overview/Evolog4PL",
         name: "Evolog 4PL",
         component: Evolog4PL,
         layout: "/admin",
+        dropdownKeepActived: true,
       },
     ],
   },
@@ -128,6 +134,12 @@ var dashRoutes = [
         path: "/documentation/ProjectStructure",
         name: "Project Structure",
         component: ProjectStructure,
+        layout: "/admin",
+      },
+      {
+        path: "/documentation/Workflow",
+        name: "Workflow",
+        component: Workflow,
         layout: "/admin",
       },
     ],
@@ -296,6 +308,7 @@ var dashRoutes = [
     component: EvologMotorista,
     layout: "/admin",
     invisible: true,
+    dropdownKeepActived: true,
   },
   {
     path: "/overview/EvologComercial",
@@ -303,6 +316,7 @@ var dashRoutes = [
     component: EvologComercial,
     layout: "/admin",
     invisible: true,
+    dropdownKeepActived: true,
   },
   {
     path: "/overview/EvologChecklist",
@@ -310,6 +324,7 @@ var dashRoutes = [
     component: EvologChecklist,
     layout: "/admin",
     invisible: true,
+    dropdownKeepActived: true,
   },
   {
     path: "/overview/EvologCanhoto",
@@ -317,6 +332,7 @@ var dashRoutes = [
     component: EvologCanhoto,
     layout: "/admin",
     invisible: true,
+    dropdownKeepActived: true,
   },
   {
     path: "/overview/Evolog4PL",
@@ -324,6 +340,7 @@ var dashRoutes = [
     component: Evolog4PL,
     layout: "/admin",
     invisible: true,
+    dropdownKeepActived: true,
   },
   {
     path: "/documentation/Code",
@@ -343,6 +360,13 @@ var dashRoutes = [
     path: "/documentation/ProjectStructure",
     name: "Estruturação",
     component: ProjectStructure,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/documentation/Workflow",
+    name: "Workflow",
+    component: Workflow,
     layout: "/admin",
     invisible: true,
   },
