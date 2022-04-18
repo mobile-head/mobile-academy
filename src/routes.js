@@ -11,6 +11,7 @@ import EvologMotorista from "./views/Overview/EvologMotorista.js";
 import EvologComercial from "./views/Overview/EvologComercial.js";
 import EvologChecklist from "./views/Overview/EvologChecklist.js";
 import EvologEva from "./views/Overview/EvologEva.js";
+import EvologCheckin from "./views/Overview/EvologCheckin.js";
 import EvologCanhoto from "./views/Overview/EvologCanhoto.js";
 import Evolog4PL from "./views/Overview/Evolog4PL.js";
 
@@ -79,6 +80,13 @@ var dashRoutes = [
         path: "/overview/EvologEva",
         name: "Evolog Eva",
         component: EvologEva,
+        layout: "/admin",
+        dropdownKeepActived: true,
+      },
+      {
+        path: "/overview/EvologCheckin",
+        name: "Evolog Checkin",
+        component: EvologCheckin,
         layout: "/admin",
         dropdownKeepActived: true,
       },
@@ -339,6 +347,14 @@ var dashRoutes = [
     path: "/overview/EvologEva",
     name: "Evolog Eva",
     component: EvologEva,
+    layout: "/admin",
+    dropdownKeepActived: true,
+    invisible: true,
+  },
+  {
+    path: "/overview/EvologCheckin",
+    name: "Evolog Checkin",
+    component: EvologCheckin,
     layout: "/admin",
     dropdownKeepActived: true,
     invisible: true,

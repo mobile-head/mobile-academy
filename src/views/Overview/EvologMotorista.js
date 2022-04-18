@@ -57,6 +57,18 @@ const EvologMotorista = () => {
                   </p>
                 </p>
 
+                <hr />
+
+                <h6>
+                  <a>Acesso</a>
+                </h6>
+
+                <p>
+                  Para acessar o Evolog Checkin é necessário ter um cadastro
+                  ativo como motorista no Evolog e ter o acesso liberado pelo
+                  gestor.
+                </p>
+
                 <hr class="mt-4" />
                 <p>
                   <h6>
