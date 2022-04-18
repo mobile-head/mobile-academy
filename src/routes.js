@@ -90,14 +90,13 @@ var dashRoutes = [
         layout: "/admin",
         dropdownKeepActived: true,
       },
-
-      // {
-      //   path: "/overview/EvologCanhoto",
-      //   name: "Evolog Canhoto",
-      //   component: EvologCanhoto,
-      //   layout: "/admin",
-      //   dropdownKeepActived: true,
-      // },
+      {
+        path: "/overview/EvologCanhoto",
+        name: "Evolog Canhoto",
+        component: EvologCanhoto,
+        layout: "/admin",
+        dropdownKeepActived: true,
+      },
       // {
       //   path: "/overview/Evolog4PL",
       //   name: "Evolog 4PL",

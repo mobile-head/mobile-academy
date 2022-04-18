@@ -1,115 +1,225 @@
-/*!
-
-=========================================================
-* Now UI Dashboard React - v1.4.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
 // reactstrap components
 import {
-    Button,
-    Card,
-    CardHeader,
-    CardTitle,
-    CardBody,
-    Row,
-    Col,
+  Button,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
+  Row,
+  Col,
 } from "reactstrap";
 
 // core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ReactPlayer from "react-player";
+import { EVOLOG_MOTORISTA_OVERVIEW } from "../../assets/videos/consts.js";
 
-class EvologCanhoto extends React.Component {
-    render() {
-        return (
-            <>
-                <PanelHeader size="sm" />
-                <div className="content">
-                    <Row>
-                        <Col md="8">
-                            <Card>
-                                <CardHeader>
-                                    <h5 className="title">Evolog Canhoto</h5>
-                                </CardHeader>
+const EvologCanhoto = () => {
+  const appSupport = {
+    Android: {
+      available: true,
+      version: "2.7.1",
+    },
+    iOS: {
+      available: false,
+      version: "0.0.0",
+    },
+  };
 
-                                <CardBody>
+  return (
+    <>
+      <PanelHeader size="sm" />
+      <div className="content">
+        <Row>
+          <Col md="8">
+            <Card>
+              <CardHeader>
+                <h5 className="title">Evolog Canhoto</h5>
 
-                                </CardBody>
-                            </Card>
-                        </Col>
+                <p className="text-muted">
+                  Overview do aplicativo Evolog Canhoto
+                </p>
+              </CardHeader>
 
-                        <Col md="4">
-                            <Card className="card-user">
-                                <div className="image">
-                                    <img alt="..." src={require("assets/img/bg5.jpg")} />
-                                </div>
-                                <CardBody>
-                                    <div className="author">
-                                        <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                            <img
-                                                alt="..."
-                                                className="avatar border-gray"
-                                                src={require("assets/img/mike.jpg")}
-                                            />
-                                            <h5 className="title">Mike Andrew</h5>
-                                        </a>
-                                        <p className="description">michael24</p>
-                                    </div>
-                                    <p className="description text-center">
-                                        "Lamborghini Mercy <br />
-                    Your chick she so thirsty <br />
-                    I'm in that two seat Lambo"
+              <CardBody>
+                <hr class="mt-2" />
+                <p>
+                  <h6>
+                    <a id="title1">Presentation</a>
+                  </h6>
+
+                  <p>
+                    O Evolog Canhoto é um aplicativo com um fluxo muito simples,
+                    sua maior responsabilidade é realizar a baixa de canhotos e
+                    baixa nas notas.
                   </p>
-                                </CardBody>
-                                <hr />
-                                <div className="button-container">
-                                    <Button
-                                        className="btn-neutral btn-icon btn-round"
-                                        color="default"
-                                        href="#pablo"
-                                        onClick={(e) => e.preventDefault()}
-                                        size="lg"
-                                    >
-                                        <i className="fab fa-facebook-f" />
-                                    </Button>
-                                    <Button
-                                        className="btn-neutral btn-icon btn-round"
-                                        color="default"
-                                        href="#pablo"
-                                        onClick={(e) => e.preventDefault()}
-                                        size="lg"
-                                    >
-                                        <i className="fab fa-twitter" />
-                                    </Button>
-                                    <Button
-                                        className="btn-neutral btn-icon btn-round"
-                                        color="default"
-                                        href="#pablo"
-                                        onClick={(e) => e.preventDefault()}
-                                        size="lg"
-                                    >
-                                        <i className="fab fa-google-plus-g" />
-                                    </Button>
-                                </div>
-                            </Card>
-                        </Col>
-                    </Row>
-                </div>
-            </>
-        );
-    }
-}
+                </p>
+
+                <hr />
+
+                <h6>
+                  <a>Acesso</a>
+                </h6>
+
+                <p>
+                  Para acessar o Evolog Canhoto é necessário ter uma conta ativa
+                  no Evolog.
+                </p>
+
+                <hr class="mt-4" />
+                <p>
+                  <h6>
+                    <a id="title1">Funções e Funcionalidade</a>
+                  </h6>
+
+                  <p>
+                    O Evolog Canhoto tem como base CTE's, a partir do CTE é
+                    possível obter todas as notas vinculadas ao mesmo e em
+                    seguida realizar o upload de canhotos.
+                  </p>
+
+                  <p>
+                    A maneira em que o CTE é identificado no aplicativo é por
+                    meio da leitura de seu barcode.
+                  </p>
+                </p>
+
+                <hr class="mt-4" />
+                <p>
+                  <h6>
+                    <a id="title1">Suporte</a>
+                  </h6>
+
+                  <p>Conta com dezenas de usuários.</p>
+
+                  {Object.keys(appSupport).map((v) => {
+                    return (
+                      <div style={styles.supportIndicator}>
+                        <div
+                          style={{
+                            ...styles.supportIndicatorChild,
+                            ...styles.supportIndicatorStatus,
+                            backgroundColor: appSupport[v].available
+                              ? "green"
+                              : "red",
+                          }}
+                        >
+                          <i
+                            style={{
+                              ...styles.supportIndicatorChild,
+                              ...styles.supportIndicatorStatusIcon,
+                              backgroundColor: appSupport[v].available
+                                ? "green"
+                                : "red",
+                            }}
+                            className={
+                              appSupport[v].available
+                                ? "now-ui-icons media-1_button-play"
+                                : "now-ui-icons media-1_button-pause"
+                            }
+                          />
+                        </div>
+                        <p
+                          style={{
+                            ...styles.supportIndicatorChild,
+                            ...styles.supportIndicatorPlatform,
+                          }}
+                        >
+                          {v}
+                        </p>
+                        <p
+                          style={{
+                            ...styles.supportIndicatorChild,
+                            ...styles.supportIndicatorVersion,
+                          }}
+                        >
+                          {appSupport[v].version}
+                        </p>
+                      </div>
+                    );
+                  })}
+                  <p style={styles.tinyText}>
+                    *Última atualização em 18/04/2022
+                  </p>
+                </p>
+              </CardBody>
+            </Card>
+          </Col>
+
+          <Col md="4">
+            <Card className="card-use">
+              <CardBody
+                style={{ alignItems: "center", justifyContent: "center" }}
+              >
+                <video
+                  id="video"
+                  class="z-depth-1"
+                  width="300px"
+                  height="550px"
+                  autoPlay
+                  loop
+                  controls
+                  muted
+                >
+                  <source src={EVOLOG_MOTORISTA_OVERVIEW} type="video/mp4" />
+                </video>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    </>
+  );
+};
+
+const styles = {
+  supportIndicator: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 50,
+    border: "2px solid #eee",
+    width: 300,
+    height: 50,
+    marginBottom: 10,
+  },
+  supportIndicatorChild: {
+    display: "flex",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+  },
+  supportIndicatorStatus: {
+    width: 40,
+    border: "none",
+    borderTopLeftRadius: 50,
+    borderBottomLeftRadius: 50,
+  },
+  supportIndicatorStatusIcon: {
+    backgroundColor: "white",
+    color: "white",
+    fontWeight: "bold",
+    border: "none",
+    fontSize: "1rem",
+    borderTopLeftRadius: 50,
+    borderBottomLeftRadius: 50,
+  },
+  supportIndicatorPlatform: {
+    width: 180,
+    paddingTop: 15,
+  },
+  supportIndicatorVersion: {
+    width: 80,
+    paddingTop: 15,
+  },
+  tinyText: {
+    fontSize: "0.7rem",
+    fontWeight: "normal",
+  },
+};
 
 export default EvologCanhoto;
