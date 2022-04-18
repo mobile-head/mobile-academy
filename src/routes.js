@@ -10,6 +10,7 @@ import UserPage from "views/UserPage.js";
 import EvologMotorista from "./views/Overview/EvologMotorista.js";
 import EvologComercial from "./views/Overview/EvologComercial.js";
 import EvologChecklist from "./views/Overview/EvologChecklist.js";
+import EvologEva from "./views/Overview/EvologEva.js";
 import EvologCanhoto from "./views/Overview/EvologCanhoto.js";
 import Evolog4PL from "./views/Overview/Evolog4PL.js";
 
@@ -67,13 +68,21 @@ var dashRoutes = [
         layout: "/admin",
         dropdownKeepActived: true,
       },
-      // {
-      //   path: "/overview/EvologChecklist",
-      //   name: "Evolog Checklist",
-      //   component: EvologChecklist,
-      //   layout: "/admin",
-      //   dropdownKeepActived: true,
-      // },
+      {
+        path: "/overview/EvologChecklist",
+        name: "Evolog Checklist",
+        component: EvologChecklist,
+        layout: "/admin",
+        dropdownKeepActived: true,
+      },
+      {
+        path: "/overview/EvologEva",
+        name: "Evolog Eva",
+        component: EvologEva,
+        layout: "/admin",
+        dropdownKeepActived: true,
+      },
+
       // {
       //   path: "/overview/EvologCanhoto",
       //   name: "Evolog Canhoto",
@@ -325,6 +334,14 @@ var dashRoutes = [
     layout: "/admin",
     invisible: true,
     dropdownKeepActived: true,
+  },
+  {
+    path: "/overview/EvologEva",
+    name: "Evolog Eva",
+    component: EvologEva,
+    layout: "/admin",
+    dropdownKeepActived: true,
+    invisible: true,
   },
   {
     path: "/overview/EvologCanhoto",

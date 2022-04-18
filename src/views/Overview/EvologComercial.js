@@ -58,6 +58,17 @@ const EvologComercial = () => {
                   </p>
                 </p>
 
+                <h6>
+                  <a>Acesso</a>
+                </h6>
+
+                <p>
+                  Para acessar o Evolog Comercial é necessário ter uma conta
+                  ativa no Evolog e acesso ao Monitoria. Dentro da aplicação
+                  temos um módulo chamado "Ag Estoque", para acessar este é
+                  necessário ter uma conta ativa no WebÁgil também.
+                </p>
+
                 <hr class="mt-4" />
                 <p>
                   <h6>

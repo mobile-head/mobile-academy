@@ -56,7 +56,7 @@ class Footer extends React.Component {
               </li>
               <li>
                 <a
-                  href="https://console.firebase.google.com/u/3/?hl=pt-br"
+                  href="https://appstoreconnect.apple.com/apps"
                   target="_blank"
                 >
                   App Store Connect
