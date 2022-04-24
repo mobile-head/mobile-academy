@@ -35,13 +35,12 @@ function Husky() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Configurando o Husky</h5>
+
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
                   qualidade que aborda vários aspectos.
                 </p>
-
-                <h5>Configurando o Husky</h5>
               </CardHeader>
 
               <CardBody>
@@ -91,6 +90,7 @@ function Husky() {
                     </li>
                   </ul>
                   <br />
+                  <hr />
                   <h7
                     ref={refIntegratingHuskyToProject}
                     id="huskyIntegration"
@@ -144,6 +144,8 @@ function Husky() {
                   </pre>
 
                   <br />
+                  <hr />
+
                   <h7
                     ref={refIntegratingPrettierLintStaged}
                     id="huskyLintStaged"
@@ -208,6 +210,8 @@ function Husky() {
                   </pre>
 
                   <br />
+                  <hr />
+
                   <h7
                     ref={refHuskyInAction}
                     id="huskyAction"

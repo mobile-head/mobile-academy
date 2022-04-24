@@ -39,13 +39,11 @@ function ESLint() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Configurando o ESLint</h5>
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
                   qualidade que aborda vários aspectos.
                 </p>
-
-                <h5>Configurando o ESLint</h5>
               </CardHeader>
 
               <CardBody>
@@ -110,6 +108,7 @@ function ESLint() {
                   <br />
                   <br />
                   <br />
+                  <hr />
                   <p>
                     <h7
                       ref={refIntegratingESLintToProject}
@@ -192,6 +191,7 @@ function ESLint() {
                     </p>
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refIntegratingESLintToVsCode}
                     id="ESLintVSCodeIntegration"
@@ -252,6 +252,7 @@ function ESLint() {
                     ESLint com nossas configurações.
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refESLintInAction}
                     id="ESLintAction"
@@ -302,6 +303,7 @@ function ESLint() {
                     rápida.
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refUsingESLint}
                     id="RunningESLintTask"
@@ -372,6 +374,7 @@ function ESLint() {
                   </div>
                   <br />
                   <br />
+                  <hr />
                   <h7
                     ref={refResolvingErrors}
                     id="ErrorResolve"

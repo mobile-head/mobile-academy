@@ -33,24 +33,21 @@ function ProjectStructure() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>
-                  Documentação da padrão de projetos dos aplicativos
-                </CardTitle>
+                <h5 className="title">
+                  Documentação do padrão de projetos dos aplicativos
+                </h5>
+
                 <p className="text-muted">
                   A estruturação dos projetos é definida por um padrão de
-                  projetos que separa view e lófica
+                  projetos que separa view e logic
                 </p>
-
-                <h5 id="projectPattern">
-                  Em relação ao padrão de projetos (VL)
-                </h5>
               </CardHeader>
 
               <CardBody>
                 <p>
                   <h6>
                     <a id="projectPatternImportance">
-                      - A respeito do padrão de projetos
+                      A respeito do padrão de projetos
                     </a>
                   </h6>
 
@@ -460,7 +457,7 @@ function ProjectStructure() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#projectPattern">
-                    - A respeito do padrão de projetos
+                    A respeito do padrão de projetos:
                   </a>
                   <ul>
                     <li>

@@ -47,13 +47,12 @@ function CodePush() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Integração com o CodePush</h5>
+
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
                   qualidade que aborda vários aspectos.
                 </p>
-
-                <h5>Integração com o CodePush</h5>
               </CardHeader>
 
               <CardBody>
@@ -89,6 +88,7 @@ function CodePush() {
                     da playstore.
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refCreatingAProjectInAppCenter}
                     id="createAppCenterProject"
@@ -132,6 +132,7 @@ function CodePush() {
                     />
                   </div>
                   <br /> <br />
+                  <hr />
                   <h7
                     ref={refCreatingDeploymentEnvironment}
                     id="createEnvironments"
@@ -188,6 +189,7 @@ function CodePush() {
                     />
                   </div>
                   <br /> <br />
+                  <hr />
                   <h7
                     ref={refIntegratingEnvironmentsDeployment}
                     id="environmentsIntegration"
@@ -222,6 +224,7 @@ function CodePush() {
                     o ambiente prd em modo release.
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refInstallingCodePush}
                     id="installCodePush"
@@ -283,6 +286,7 @@ function CodePush() {
                     />
                   </pre>
                   <br />
+                  <hr />
                   <h7
                     ref={refConfiguringCodePush}
                     id="codePushConfiguring"
@@ -322,6 +326,7 @@ function CodePush() {
                     />
                   </pre>
                   <br />
+                  <hr />
                   <h7
                     ref={refConfiguringWhenUpdateApp}
                     id="whenUpdate"
@@ -369,6 +374,7 @@ function CodePush() {
                     que o app está rodando.
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refReleasingUpdatesByCodePush}
                     id="releaseUpdate"
@@ -455,6 +461,7 @@ function CodePush() {
                     />
                   </pre>
                   <br />
+                  <hr />
                   <h7
                     ref={refUndoingLastCodePushRelease}
                     id="undoRelease"
@@ -491,6 +498,7 @@ function CodePush() {
                     />
                   </pre>
                   <br />
+                  <hr />
                   <h7
                     ref={refManagingCodePushReleases}
                     id="manageReleasesByAppCenter"
@@ -624,8 +632,8 @@ function CodePush() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#newProjects">
-                    - Ambientes de deployment e integração do CodePush com o
-                    projeto
+                    Ambientes de deployment e integração do CodePush com o
+                    projeto:
                   </a>
                   <ul>
                     <li>

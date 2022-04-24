@@ -37,13 +37,13 @@ function Crashlytics() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">
+                  Integração com o Crashlytics do AppCenter
+                </h5>
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
-                  qualidade que aborda vários aspectos.
+                  qualidade que aborda vários aspectos
                 </p>
-
-                <h5>Integração com o Crashlytics do AppCenter</h5>
               </CardHeader>
 
               <CardBody>
@@ -77,12 +77,13 @@ function Crashlytics() {
                   </p>
                   <div>
                     <img
-                      height="150px"
+                      height="30%"
                       alt="..."
                       src={require("assets/img/DiagnosticsSidebar.png")}
                     />
                   </div>
                   <br /> <br />
+                  <hr />
                   <h7
                     ref={refIntegratingCrashlytics}
                     id="crashlyticsIntegration"
@@ -136,6 +137,7 @@ function Crashlytics() {
                     projeto no App Center já nos deu informações do dispositivo.
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refKnowingCrashlytics}
                     id="crashlyticsDashboard"
@@ -146,7 +148,7 @@ function Crashlytics() {
                   <br /> <br />
                   <div>
                     <img
-                      height="450px"
+                      height="30%"
                       alt="..."
                       src={require("assets/img/CrashlyticsDashboard.png")}
                     />
@@ -171,6 +173,7 @@ function Crashlytics() {
                     </dl>
                   </p>
                   <br />
+                  <hr />
                   <h7
                     ref={refCrashOverview}
                     id="crashOverview"
@@ -185,19 +188,20 @@ function Crashlytics() {
                   </p>
                   <div>
                     <img
-                      height="450px"
+                      height="30%"
                       alt="..."
                       src={require("assets/img/CrashOverview.png")}
                     />
                   </div>
                   <div>
                     <img
-                      height="205px"
+                      height="30%"
                       alt="..."
                       src={require("assets/img/CrashOverview2.png")}
                     />
                   </div>
                   <br /> <br />
+                  <hr />
                   <h7
                     ref={refCrashReport}
                     id="crashReport"
@@ -217,7 +221,7 @@ function Crashlytics() {
                   </p>
                   <div>
                     <img
-                      height="310px"
+                      height="30%"
                       alt="..."
                       src={require("assets/img/ReportCrash.png")}
                     />
@@ -230,7 +234,7 @@ function Crashlytics() {
                   </p>
                   <div>
                     <img
-                      height="550px"
+                      height="30%"
                       alt="..."
                       src={require("assets/img/CrashEvents.png")}
                     />
@@ -271,8 +275,8 @@ function Crashlytics() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#crashlytics">
-                    - A respeito da Integração do Crashlytics do App Center com
-                    o aplicativo
+                    A respeito da Integração do Crashlytics do App Center com o
+                    aplicativo:
                   </a>
                   <ul>
                     <li>

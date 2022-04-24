@@ -262,27 +262,27 @@ var dashRoutes = [
       },
     ],
   },
-  {
-    path: "/components/native-modules/",
-    name: "Componentes",
-    icon: "objects_diamond",
-    component: NativeModulesAndroid,
-    layout: "/admin",
-    dropdown: [
-      {
-        path: "/components/native-modules/android",
-        name: "Native Modules - Android",
-        component: NativeModulesAndroid,
-        layout: "/admin",
-      },
-      {
-        path: "/components/native-modules/ios",
-        name: "Native Modules - Ios",
-        component: NativeModulesIos,
-        layout: "/admin",
-      },
-    ],
-  },
+  // {
+  //   path: "/components/native-modules/",
+  //   name: "Componentes",
+  //   icon: "objects_diamond",
+  //   component: NativeModulesAndroid,
+  //   layout: "/admin",
+  //   dropdown: [
+  //     {
+  //       path: "/components/native-modules/android",
+  //       name: "Native Modules - Android",
+  //       component: NativeModulesAndroid,
+  //       layout: "/admin",
+  //     },
+  //     {
+  //       path: "/components/native-modules/ios",
+  //       name: "Native Modules - Ios",
+  //       component: NativeModulesIos,
+  //       layout: "/admin",
+  //     },
+  //   ],
+  // },
   // {
   //   path: "/dashboard",
   //   name: "Dashboard",

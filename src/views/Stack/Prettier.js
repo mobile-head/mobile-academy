@@ -35,13 +35,11 @@ function Prettier() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Configurando o Prettier</h5>
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
                   qualidade que aborda vários aspectos.
                 </p>
-
-                <h5>Configurando o Prettier</h5>
               </CardHeader>
 
               <CardBody>
@@ -88,6 +86,8 @@ function Prettier() {
                     </li>
                   </ul>
                   <br />
+                  <hr />
+
                   <h7
                     ref={refIntegratingPrettierToProject}
                     id="PrettierIntegration"
@@ -126,6 +126,8 @@ function Prettier() {
                     estilizado.
                   </p>
                   <br />
+                  <hr />
+
                   <h7
                     ref={refIntegratingPrettierToVsCode}
                     id="PrettierVSCodeIntegration"
@@ -166,6 +168,8 @@ function Prettier() {
                   </pre>
 
                   <br />
+                  <hr />
+
                   <h7
                     ref={refPrettierInAction}
                     id="PrettierAction"
@@ -214,7 +218,7 @@ function Prettier() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#Prettier">
-                    - A respeito da estilização global do código dos projetos
+                    A respeito da estilização global do código dos projetos:
                   </a>
                   <ul>
                     <li>

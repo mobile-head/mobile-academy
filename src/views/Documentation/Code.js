@@ -41,13 +41,11 @@ function Code() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação dos aplicativos</CardTitle>
+                <h5 className="title">Code Rules</h5>
                 <p className="text-muted">
                   Padrões e boas práticas que devem ser seguidos nos projetos
                   mobile
                 </p>
-
-                <h5>Em relação ao código</h5>
               </CardHeader>
 
               <CardBody>
@@ -80,6 +78,7 @@ function Code() {
                 </p>
 
                 <p class="mt-5">
+                  <hr />
                   <h6>
                     <a ref={refEdent} id="tip2">
                       - Mantenha o código bem edentado
@@ -109,6 +108,7 @@ function Code() {
 
                 <p class="mt-5">
                   <h6>
+                    <hr />
                     <a ref={refMargin} id="tip3">
                       - Separe os métodos com espaços e margens horizontais
                     </a>
@@ -136,6 +136,7 @@ function Code() {
                 </p>
 
                 <p class="mt-5">
+                  <hr />
                   <h6>
                     <a ref={refOrder} id="tip4">
                       - Ordene os métodos por importância
@@ -170,6 +171,7 @@ function Code() {
                 </p>
 
                 <p class="mt-5">
+                  <hr />
                   <h6>
                     <a ref={refAvoidConsoles} id="tip5">
                       - Evite o uso excessivo de console.logs no projeto
@@ -187,6 +189,7 @@ function Code() {
                 </p>
 
                 <p class="mt-5">
+                  <hr />
                   <h6>
                     <a ref={refAvoidHardcode} id="tip6">
                       - Evite a utilização de hardcode ao definir estilos
@@ -215,6 +218,7 @@ function Code() {
                 </p>
 
                 <p class="mt-5">
+                  <hr />
                   <h6>
                     <a ref={refCodeReuse} id="tip6">
                       - Preze sempre a reutilização de código
@@ -276,9 +280,8 @@ function Code() {
               </CardHeader>
 
               <CardBody>
-                {/*  */}
                 <p>
-                  <a className="text-muted">- Code Rules</a>
+                  <a className="text-muted">Code Rules:</a>
                   <ul>
                     <li>
                       <button onClick={() => changeAnchorLink("refConsts")}>

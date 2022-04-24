@@ -1,21 +1,11 @@
 import React from "react";
 
-// reactstrap components
-import {
-  Button,
-  Card,
-  CardHeader,
-  CardTitle,
-  CardBody,
-  Row,
-  Col,
-} from "reactstrap";
+import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
-// core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
-import ReactPlayer from "react-player";
 import { EVOLOG_COMERCIAL_OVERVIEW } from "../../assets/videos/consts.js";
 
+//= ==============================================================================================
 const EvologComercial = () => {
   const appSupport = {
     Android: {
@@ -28,6 +18,7 @@ const EvologComercial = () => {
     },
   };
 
+  //= ==============================================================================================
   return (
     <>
       <PanelHeader size="sm" />

@@ -41,13 +41,11 @@ function Pipeline() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Configurando Pipelines</h5>
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
                   qualidade que aborda vários aspectos.
                 </p>
-
-                <h5>Configurando Pipelines</h5>
               </CardHeader>
 
               <CardBody>
@@ -92,7 +90,7 @@ function Pipeline() {
                   </ul>
 
                   <br />
-                  <br />
+                  <hr />
 
                   <h7
                     ref={refCreatingAppPasswords}
@@ -157,7 +155,7 @@ function Pipeline() {
                   </p>
 
                   <br />
-                  <br />
+                  <hr />
 
                   <h7
                     ref={refCreatingEnvironmentVariables}
@@ -214,7 +212,7 @@ function Pipeline() {
                   </p>
 
                   <br />
-                  <br />
+                  <hr />
 
                   <h7
                     ref={refEnablingBitbucketPipeline}
@@ -240,7 +238,7 @@ function Pipeline() {
 
                   <br />
                   <br />
-                  <br />
+                  <hr />
 
                   <h7
                     ref={refCreatingEnvironmentDeployment}
@@ -271,7 +269,7 @@ function Pipeline() {
 
                   <br />
                   <br />
-                  <br />
+                  <hr />
 
                   <h7
                     ref={refConfiguringPipelineActions}
@@ -308,7 +306,8 @@ function Pipeline() {
                   </pre>
 
                   <br />
-                  <br />
+                  <hr />
+
                   <h7
                     ref={refPipelineInAction}
                     id="pipelineAction"
@@ -384,8 +383,7 @@ function Pipeline() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#pipelines">
-                    - A respeito do fluxo de CI/CD utilizando Bitbucket
-                    Pipelines
+                    A respeito do fluxo de CI/CD utilizando Bitbucket Pipelines:
                   </a>
                   <ul>
                     <li>

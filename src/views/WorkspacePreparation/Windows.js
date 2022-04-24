@@ -34,7 +34,7 @@ function Windows() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Workspace Preparation - Windows OS</CardTitle>
+                <h5 className="title">Workspace Preparation - Windows OS</h5>
                 <p className="text-muted">
                   Ações necessárias para configurar o ambiente de trabalho
                   Windows
@@ -253,6 +253,7 @@ function Windows() {
 
                   <div class="pl-3">
                     <h6 class="mt-5">
+                      <hr />
                       <a ref={refInstantClient} id="link2">
                         InstantClient
                       </a>
@@ -274,6 +275,7 @@ function Windows() {
                     <p>2. Extraia seu conteúdo para C:\</p>
 
                     <h6 class="mt-5">
+                      <hr />
                       <a ref={refEnvironmentVariables} id="link3">
                         Configuração das variáveis de ambiente
                       </a>
@@ -368,6 +370,7 @@ function Windows() {
 
                   <div class="pl-3">
                     <h6 class="mt-5 pb-2">
+                      <hr />
                       <a ref={refWorkspacePreparation} id="link4">
                         Preparação do Ambiente de Trabalho
                       </a>
@@ -505,7 +508,7 @@ function Windows() {
 
               <CardBody>
                 <p>
-                  <a className="text-muted">- Workspace Preparation</a>
+                  <a className="text-muted">Workspace Preparation:</a>
                   <ul>
                     <li>
                       <button

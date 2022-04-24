@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 
-// reactstrap components
 import { Row, Col, Card, CardBody, CardHeader, CardTitle } from "reactstrap";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -8,11 +7,9 @@ import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { ReduxExamples } from "../../variables/codeExamplesRedux";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 
-import Iframe from "react-iframe";
-
-// core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
+//= ==============================================================================================
 const Redux = () => {
   const refStore = useRef(null);
   const refReducer = useRef(null);
@@ -20,6 +17,7 @@ const Redux = () => {
   const refReduxWrapper = useRef(null);
   const refChangingValues = useRef(null);
   const refViewingReduxStateValues = useRef(null);
+
   useScrollToAnchorByParams({
     refStore,
     refReducer,
@@ -28,8 +26,10 @@ const Redux = () => {
     refChangingValues,
     refViewingReduxStateValues,
   });
+
   const changeAnchorLink = useChangeAnchorLink();
 
+  //= ==============================================================================================
   return (
     <>
       <PanelHeader size="sm" />
@@ -244,7 +244,7 @@ const Redux = () => {
 
               <CardBody>
                 <p>
-                  <a className="text-muted">- React Redux</a>
+                  <a className="text-muted">React Redux:</a>
                   <ul>
                     <li>
                       <button onClick={() => changeAnchorLink("refStore")}>

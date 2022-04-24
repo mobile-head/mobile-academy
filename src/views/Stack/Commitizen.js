@@ -35,13 +35,12 @@ function Commitizen() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Configurando o Commitizen</h5>
+
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
-                  qualidade que aborda vários aspectos.
+                  qualidade que aborda vários aspectos
                 </p>
-
-                <h5>Configurando o Commitizen</h5>
               </CardHeader>
 
               <CardBody>
@@ -88,6 +87,7 @@ function Commitizen() {
                   </ul>
 
                   <br />
+                  <hr />
 
                   <h7
                     ref={refIntegratingCommitizenToProject}
@@ -165,6 +165,8 @@ function Commitizen() {
                   <br />
                   <br />
                   <br />
+                  <hr />
+
                   <h7
                     ref={refIntegratingCommitizenToHusky}
                     id="commitzenHuskyIntegration"
@@ -210,6 +212,8 @@ function Commitizen() {
                   </pre>
 
                   <br />
+                  <hr />
+
                   <h7
                     ref={refHuskyCommitizenInAction}
                     id="huskyInAction"
@@ -262,7 +266,7 @@ function Commitizen() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#Commitizen">
-                    - Configurando o Commitizen
+                    Configurando o Commitizen:
                   </a>
                   <ul>
                     <li>

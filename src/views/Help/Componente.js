@@ -1,15 +1,14 @@
 import React from "react";
 
-// reactstrap components
 import { Row, Col, Card, CardBody, CardHeader, CardTitle } from "reactstrap";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CodeExamples } from "variables/codeExamples";
 
-// core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
+//= ==============================================================================================
 const Componente = () => {
   return (
     <>
@@ -19,9 +18,9 @@ const Componente = () => {
           <Col md="9">
             <Card>
               <CardHeader>
-                <p style={styles.cardHeaderBreadcrumb}>Help /</p>
-                <h2 style={styles.cardHeaderTitle}>Componente</h2>
-                <p style={styles.itemText}>
+                <h5 className="title">Componentes</h5>
+
+                <p className="text-muted">
                   Possui a visão e detalhes de como um componente React-Native
                   deve ser escrito e organizado.
                 </p>

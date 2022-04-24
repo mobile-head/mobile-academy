@@ -31,13 +31,11 @@ function CreatingProject() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Criação de novos projetos</h5>
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
                   qualidade que aborda vários aspectos.
                 </p>
-
-                <h5>Criação de novos projetos</h5>
               </CardHeader>
 
               <CardBody>
@@ -63,6 +61,9 @@ function CreatingProject() {
                       children={CodeExamplesStructure.initProject}
                     />
                   </pre>
+                  <br />
+
+                  <hr />
                   <h7
                     ref={refCreatingProjectWithTemplate}
                     id="createProjectsWithTemplate"
@@ -169,7 +170,7 @@ function CreatingProject() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#newProjects">
-                    - A respeito da criação de novos projetos mobile
+                    A respeito da criação de novos projetos mobile:
                   </a>
                   <ul>
                     <li>

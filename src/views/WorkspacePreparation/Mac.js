@@ -32,19 +32,17 @@ const Mac = () => {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Workspace Preparation - Mac OS</CardTitle>
+                <h5 className="title">Workspace Preparation - Mac OS</h5>
                 <p className="text-muted">
                   Ações necessárias para configurar o ambiente de trabalho Mac
                 </p>
-
-                {/* <h5>Em relação ao código</h5> */}
               </CardHeader>
 
               <CardBody>
                 <div id="aplicacoes">
-                  <h3 ref={refApplications} style={styles.itemTitle}>
+                  <h7 class="font-weight-bold" ref={refApplications}>
                     Sistemas utilizadas
-                  </h3>
+                  </h7>
                   <p style={styles.itemText}>
                     Instale as aplicações a seguir no seu Mac respeitando as
                     versões e certifique-se de que todas elas aparecem na pasta
@@ -141,10 +139,13 @@ const Mac = () => {
                     </ul>
                   </div>
                 </div>
+
+                <hr />
+
                 <div id="utilitarios">
-                  <h3 ref={refUtils} style={styles.itemTitle}>
+                  <h7 class="font-weight-bold" ref={refUtils}>
                     Utilitários
-                  </h3>
+                  </h7>
                   <p style={styles.itemText}></p>
                   <div class="container-fluid">
                     <ul class="list-group">
@@ -217,10 +218,13 @@ const Mac = () => {
                     </ul>
                   </div>
                 </div>
+
+                <hr />
+
                 <div id="variaveis-ambiente">
-                  <h3 ref={refEnvironmentVariables} style={styles.itemTitle}>
+                  <h7 class="font-weight-bold" ref={refEnvironmentVariables}>
                     Variáveis de ambiente
-                  </h3>
+                  </h7>
                   <p style={styles.itemText}>
                     Crie um arquivo chamado ".zshrc" no diretório do seu usuário
                     utilizando o utilitário "nano" do terminal:
@@ -281,7 +285,7 @@ const Mac = () => {
 
               <CardBody>
                 <p>
-                  <a className="text-muted">- React Redux</a>
+                  <a className="text-muted">Workspace Preparation:</a>
                   <ul>
                     <li>
                       <button

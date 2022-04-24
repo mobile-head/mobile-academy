@@ -45,21 +45,20 @@ function Workflow() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>
-                  Documentação do fluxo de trabalho Mobile Bravo
-                </CardTitle>
+                <h5 className="title">
+                  Documentação do workflow do Mobile Bravo
+                </h5>
+
                 <p className="text-muted">
                   Definição do fluxo de trabalho seguido no mobile
                 </p>
-
-                <h5 id="projectPattern">Em relação ao workflow do mobile</h5>
               </CardHeader>
 
               <CardBody>
                 <p>
                   <h6>
                     <a ref={refMobileWorkflowOverview} id="mobileOverview">
-                      - A respeito do workflow do mobile
+                      A respeito do workflow do mobile
                     </a>
                   </h6>
                   <h7 id="workflowOverview" class="font-weight-bold">
@@ -415,7 +414,7 @@ function Workflow() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#mobileOverview">
-                    - A respeito do workflow do mobile
+                    A respeito do workflow do mobile:
                   </a>
                   <ul>
                     <li>

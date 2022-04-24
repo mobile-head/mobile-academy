@@ -37,13 +37,13 @@ function Analytics() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">
+                  Integração com o Analytics do AppCenter
+                </h5>
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
                   qualidade que aborda vários aspectos.
                 </p>
-
-                <h5>Integração com o Analytics do AppCenter</h5>
               </CardHeader>
 
               <CardBody>
@@ -101,6 +101,7 @@ function Analytics() {
                     </li>
                   </ul>
                   <br />
+                  <hr />
                   <h7
                     ref={refIntegratingAnalytics}
                     id="analyticsIntegration"
@@ -126,6 +127,7 @@ function Analytics() {
                   </a>
                   <br />
                   <br />
+                  <hr />
 
                   <h7
                     ref={refKnowingAnalytics}
@@ -196,6 +198,8 @@ function Analytics() {
                   </dl>
 
                   <br />
+                  <hr />
+
                   <h7
                     ref={refDispatchingAnalyticsEvents}
                     id="dispatchEvents"
@@ -282,6 +286,8 @@ function Analytics() {
                   </pre>
 
                   <br />
+                  <hr />
+
                   <h7
                     ref={refViewingAnalyticEvents}
                     id="viewingDispatchEvents"
@@ -324,9 +330,9 @@ function Analytics() {
 
               <CardBody>
                 <p>
-                  <a className="text-muted" href="#newProjects">
-                    - A respeito da Integração do Analytics do App Center com o
-                    aplicativo
+                  <a className="text-muted">
+                    A respeito da Integração do Analytics do App Center com o
+                    aplicativo:
                   </a>
                   <ul>
                     <li>

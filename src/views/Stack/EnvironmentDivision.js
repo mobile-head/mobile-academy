@@ -31,13 +31,11 @@ function EnvironmentDivision() {
           <Col md="9">
             <Card>
               <CardHeader>
-                <CardTitle>Documentação da estruturação dos projetos</CardTitle>
+                <h5 className="title">Divisão de ambientes</h5>
                 <p className="text-muted">
                   A estruturação dos projetos é definida por uma stack de
-                  qualidade que aborda vários aspectos.
+                  qualidade que aborda vários aspectos
                 </p>
-
-                <h5>Divisão de ambientes</h5>
               </CardHeader>
 
               <CardBody>
@@ -55,6 +53,10 @@ function EnvironmentDivision() {
                     como ele se comporta e absorver o máximo dessas
                     configurações para facilitar o desenvolvimento.
                   </p>
+
+                  <br />
+
+                  <hr />
                   <h7
                     ref={refWhyEnvironmentDivision}
                     id="whyDivideEnvironments"
@@ -97,6 +99,11 @@ function EnvironmentDivision() {
                       </h7>
                     </li>
                   </ol>
+
+                  <br />
+
+                  <hr />
+
                   <h7
                     ref={refDoingNativeEnvironmentDivision}
                     id="divideEnvironmentsNative"
@@ -303,6 +310,9 @@ function EnvironmentDivision() {
                     />
                   </pre>
                   <br />
+
+                  <hr />
+
                   <h7
                     ref={refDoingReactNativeEnvironmentDivision}
                     id="divideEnvironmentsReactNative"
@@ -489,7 +499,7 @@ function EnvironmentDivision() {
               <CardBody>
                 <p>
                   <a className="text-muted" href="#newProjectsSettings">
-                    - A respeito da configuração de novos projetos mobile
+                    A respeito da configuração de novos projetos mobile:
                   </a>
                   <ul>
                     <li>
