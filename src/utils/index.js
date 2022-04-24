@@ -1,3 +1,8 @@
+import { useLocation, useHistory } from "react-router";
+import queryString from "query-string";
+import { useCallback, useEffect } from "react";
+
+//= ==============================================================================================
 const replaceUpperCaseLettersForDashLowerCase = (str) => {
   let alteredString = "";
   for (let character of str) {
@@ -8,6 +13,8 @@ const replaceUpperCaseLettersForDashLowerCase = (str) => {
   }
   return alteredString;
 };
+
+//= ==============================================================================================
 const replaceAll = (search, replace, subject) => {
   while (subject.indexOf(search) != -1) {
     subject = subject.replace(replace, search);
@@ -15,6 +22,7 @@ const replaceAll = (search, replace, subject) => {
   return subject;
 };
 
+//= ==============================================================================================
 export class StyleSheet {
   static create(_obj) {
     let styleSheet = _obj;
@@ -37,4 +45,40 @@ export class StyleSheet {
     }
     return styleSheet;
   }
+}
+
+//= ==============================================================================================
+export function scrollToAnchor(ref) {
+  if (ref?.current) {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+}
+
+//= ==============================================================================================
+export function useScrollToAnchorByParams(refs) {
+  const location = useLocation();
+  const parse = queryString.parse(location.search);
+
+  useEffect(() => {
+    if (parse?.anchor) {
+      const refName = Object.keys(refs).filter(
+        (value) => value == parse.anchor
+      );
+
+      const refToScroll = refs[refName];
+
+      scrollToAnchor(refToScroll);
+    }
+  }, [parse]);
+}
+
+//= ==============================================================================================
+export function useChangeAnchorLink() {
+  const history = useHistory();
+
+  return useCallback((refName) => {
+    history.push(`?anchor=${refName}`);
+  });
 }

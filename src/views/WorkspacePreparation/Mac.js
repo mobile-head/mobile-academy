@@ -1,33 +1,29 @@
-/*!
+import React, { useRef } from "react";
 
-=========================================================
-* Now UI Dashboard React - v1.4.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React, { Component } from "react";
-
-// reactstrap components
 import { Row, Col, Card, CardBody, CardHeader, CardTitle } from "reactstrap";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { CodeExamples } from "variables/codeExamples";
 
-// core components
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 
+//= ==============================================================================================
 const Mac = () => {
+  const refApplications = useRef(null);
+  const refUtils = useRef(null);
+  const refEnvironmentVariables = useRef(null);
+
+  useScrollToAnchorByParams({
+    refApplications,
+    refUtils,
+    refEnvironmentVariables,
+  });
+
+  const changeAnchorLink = useChangeAnchorLink();
+
+  //= ==============================================================================================
   return (
     <>
       <PanelHeader size="sm" />
@@ -46,7 +42,9 @@ const Mac = () => {
 
               <CardBody>
                 <div id="aplicacoes">
-                  <h3 style={styles.itemTitle}>Aplicações</h3>
+                  <h3 ref={refApplications} style={styles.itemTitle}>
+                    Sistemas utilizadas
+                  </h3>
                   <p style={styles.itemText}>
                     Instale as aplicações a seguir no seu Mac respeitando as
                     versões e certifique-se de que todas elas aparecem na pasta
@@ -144,7 +142,9 @@ const Mac = () => {
                   </div>
                 </div>
                 <div id="utilitarios">
-                  <h3 style={styles.itemTitle}>Utilitários</h3>
+                  <h3 ref={refUtils} style={styles.itemTitle}>
+                    Utilitários
+                  </h3>
                   <p style={styles.itemText}></p>
                   <div class="container-fluid">
                     <ul class="list-group">
@@ -218,7 +218,9 @@ const Mac = () => {
                   </div>
                 </div>
                 <div id="variaveis-ambiente">
-                  <h3 style={styles.itemTitle}>Variáveis de ambiente</h3>
+                  <h3 ref={refEnvironmentVariables} style={styles.itemTitle}>
+                    Variáveis de ambiente
+                  </h3>
                   <p style={styles.itemText}>
                     Crie um arquivo chamado ".zshrc" no diretório do seu usuário
                     utilizando o utilitário "nano" do terminal:
@@ -279,19 +281,32 @@ const Mac = () => {
 
               <CardBody>
                 <p>
-                  <a className="text-muted" href="#aplicacoes">
-                    - Aplicações
-                  </a>
-                </p>
-                <p>
-                  <a className="text-muted" href="#utilitarios">
-                    - Utilitários
-                  </a>
-                </p>
-                <p>
-                  <a className="text-muted" href="#variaveis-ambiente">
-                    - Variáveis de Ambiente
-                  </a>
+                  <a className="text-muted">- React Redux</a>
+                  <ul>
+                    <li>
+                      <button
+                        onClick={() => changeAnchorLink("refApplications")}
+                      >
+                        Sistemas utilizados
+                      </button>
+                    </li>
+
+                    <li>
+                      <button onClick={() => changeAnchorLink("refUtils")}>
+                        Utilitários
+                      </button>
+                    </li>
+
+                    <li>
+                      <button
+                        onClick={() =>
+                          changeAnchorLink("refEnvironmentVariables")
+                        }
+                      >
+                        Variáveis de Ambiente
+                      </button>
+                    </li>
+                  </ul>
                 </p>
               </CardBody>
             </Card>

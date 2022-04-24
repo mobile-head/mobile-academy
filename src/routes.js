@@ -43,7 +43,7 @@ import NativeModulesIos from "./views/Components/NativeModulesIos.js";
 
 //-------------------------------------------------------------------------
 import Navegacao from "./views/Help/Navegacao.js";
-import Armazenamento from "./views/Help/Armazenamento.js";
+import Redux from "./views/Help/Redux.js";
 import Componente from "./views/Help/Componente.js";
 import Logica from "./views/Help/Logica.js";
 
@@ -168,26 +168,26 @@ var dashRoutes = [
     layout: "/admin",
     dropdown: [
       {
-        path: "/help/Componente",
-        name: "Componente",
+        path: "/help/Component",
+        name: "Component",
         component: Componente,
         layout: "/admin",
       },
       {
-        path: "/help/Logica",
-        name: "Lógica",
+        path: "/help/Logic",
+        name: "Logic",
         component: Logica,
         layout: "/admin",
       },
       {
-        path: "/help/Armazenamento",
-        name: "Armazenamento",
-        component: Armazenamento,
+        path: "/help/Redux",
+        name: "Redux",
+        component: Redux,
         layout: "/admin",
       },
       {
-        path: "/help/Navegacao",
-        name: "Navegação",
+        path: "/help/Navigation",
+        name: "Navigation",
         component: Navegacao,
         layout: "/admin",
       },
@@ -508,22 +508,22 @@ var dashRoutes = [
     invisible: true,
   },
   {
-    path: "/help/Logica",
-    name: "Lógica",
+    path: "/help/Logic",
+    name: "Logic",
     component: Logica,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Armazenamento",
-    name: "Armazenamento",
-    component: Armazenamento,
+    path: "/help/Redux",
+    name: "Redux",
+    component: Redux,
     layout: "/admin",
     invisible: true,
   },
   {
-    path: "/help/Navegacao",
-    name: "Navegação",
+    path: "/help/Navigation",
+    name: "Navigation",
     component: Navegacao,
     layout: "/admin",
     invisible: true,
