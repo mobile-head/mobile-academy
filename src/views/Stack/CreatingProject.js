@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesStructure } from "../../variables/codeExamplesStructure";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -174,22 +175,20 @@ function CreatingProject() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Criando projetos sem template"
                         onClick={() =>
                           changeAnchorLink("refCreatingProjectWithoutTemplate")
                         }
-                      >
-                        Criando projetos sem template
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Criando projetos com template"
                         onClick={() =>
                           changeAnchorLink("refCreatingProjectWithTemplate")
                         }
-                      >
-                        Criando projetos com template
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

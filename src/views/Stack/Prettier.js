@@ -9,6 +9,7 @@ import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
 import { CodeExamplePrettier } from "variables/codeExamplePrettier.js";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 //= ==============================================================================================
 function Prettier() {
@@ -222,36 +223,32 @@ function Prettier() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="O que é e porque utilizar o Prettier"
                         onClick={() => changeAnchorLink("refWhyPrettier")}
-                      >
-                        O que é e porque utilizar o Prettier
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o Prettier com o projeto"
                         onClick={() =>
                           changeAnchorLink("refIntegratingPrettierToProject")
                         }
-                      >
-                        Integrando o Prettier com o projeto
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o Prettier com o VSCode"
                         onClick={() =>
                           changeAnchorLink("refIntegratingPrettierToVsCode")
                         }
-                      >
-                        Integrando o Prettier com o VSCode
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Prettier em ação"
                         onClick={() => changeAnchorLink("refPrettierInAction")}
-                      >
-                        Prettier em ação
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

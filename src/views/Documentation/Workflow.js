@@ -14,6 +14,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesWorkflow } from "../../variables/codeExamplesWorkflow";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -418,40 +419,37 @@ function Workflow() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Definição e visão geral"
                         onClick={() =>
                           changeAnchorLink("refMobileWorkflowOverview")
                         }
-                      >
-                        Definição e visão geral
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Metodologias"
                         onClick={() => changeAnchorLink("refMethodologies")}
-                      >
-                        Metodologias
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refDemands")}>
-                        Demandas: Quem são, onde vivem, de que se alimentam?
-                      </button>
+                      <ButtonLink
+                        link="Demandas: Quem são, onde vivem, de que se alimentam?"
+                        onClick={() => changeAnchorLink("refDemands")}
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Worflow do Jira"
                         onClick={() => changeAnchorLink("refJiraWorkflow")}
-                      >
-                        Worflow do Jira
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Worflow do Bitbucket"
                         onClick={() => changeAnchorLink("refBitbucketWorkflow")}
-                      >
-                        Worflow do Bitbucket
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

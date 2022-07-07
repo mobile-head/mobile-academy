@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesProjectStructure } from "../../variables/codeExamplesProjectStructure";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -461,23 +462,24 @@ function ProjectStructure() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Importância de padrões de projeto"
                         onClick={() => changeAnchorLink("refPatternImportance")}
-                      >
-                        Importância de padrões de projeto
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refOldPattern")}>
-                        Tudo junto e misturado: Um pouco sobre o padrão comum{" "}
-                      </button>
+                      <ButtonLink
+                        link="Tudo junto e misturado: Um pouco sobre o padrão comum"
+                        onClick={() => changeAnchorLink("refOldPattern")}
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refOurPattern")}>
-                        Conhecendo o padrão de projetos VL(View {"&"} logic){" "}
-                      </button>
+                      <ButtonLink
+                        link="Conhecendo o padrão de projetos VL(View e logic)"
+                        onClick={() => changeAnchorLink("refOurPattern")}
+                      />
                     </li>
                   </ul>
                 </p>

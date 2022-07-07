@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesESLint } from "../../variables/codeExamplesESLint.js";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -485,51 +486,47 @@ function ESLint() {
                   </a>
                   <ul>
                     <li>
-                      <button onClick={() => changeAnchorLink("refWhyESLint")}>
-                        O que é e porque usar o ESLint
-                      </button>
+                      <ButtonLink
+                        link="O que é e porque usar o ESLint"
+                        onClick={() => changeAnchorLink("refWhyESLint")}
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o ESLint com o projeto"
                         onClick={() =>
                           changeAnchorLink("refIntegratingESLintToProject")
                         }
-                      >
-                        Integrando o ESLint com o projeto
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o ESLint ao VSCode"
                         onClick={() =>
                           changeAnchorLink("refIntegratingESLintToVsCode")
                         }
-                      >
-                        Integrando o ESLint ao VSCode
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="ESLint em ação"
                         onClick={() => changeAnchorLink("refESLintInAction")}
-                      >
-                        ESLint em ação
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Utilizando a task do ESLint"
                         onClick={() => changeAnchorLink("refUsingESLint")}
-                      >
-                        Utilizando a task do ESLint
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Resolvendo erros"
                         onClick={() => changeAnchorLink("refResolvingErrors")}
-                      >
-                        Resolvendo erros
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

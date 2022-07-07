@@ -10,6 +10,8 @@ import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 import { CodeExamplePipeline } from "../../variables/codeExamplePipeline";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 
+import ButtonLink from "../../components/Buttons/ButtonLink";
+
 //= ==============================================================================================
 function Pipeline() {
   const refWhyPipeline = useRef(null);
@@ -387,69 +389,62 @@ function Pipeline() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="O que é e porque utilizar pipelines"
                         onClick={() => changeAnchorLink("refWhyPipeline")}
-                      >
-                        O que é e porque utilizar pipelines
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Criando app passwords"
                         onClick={() =>
                           changeAnchorLink("refCreatingAppPasswords")
                         }
-                      >
-                        Criando app passwords
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Criando variáveis de ambiente"
                         onClick={() =>
                           changeAnchorLink("refCreatingEnvironmentVariables")
                         }
-                      >
-                        Criando variáveis de ambiente
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Habilitando a bitbucket pipeline"
                         onClick={() =>
                           changeAnchorLink("refEnablingBitbucketPipeline")
                         }
-                      >
-                        Habilitando a bitbucket pipeline
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Criando ambientes de deployment"
                         onClick={() =>
                           changeAnchorLink("refCreatingEnvironmentDeployment")
                         }
-                      >
-                        Criando ambientes de deployment
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Configurando as ações da pipeline"
                         onClick={() =>
                           changeAnchorLink("refConfiguringPipelineActions")
                         }
-                      >
-                        Configurando as ações da pipeline
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Pipeline em ação"
                         onClick={() => changeAnchorLink("refPipelineInAction")}
-                      >
-                        Pipeline em ação
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

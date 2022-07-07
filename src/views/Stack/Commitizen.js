@@ -9,6 +9,7 @@ import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
 import { CodeExampleCommitzen } from "../../variables/codeExampleCommitzen";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 //= ==============================================================================================
 function Commitizen() {
@@ -270,38 +271,34 @@ function Commitizen() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="O que é e porque utilizar o commitizen"
                         onClick={() => changeAnchorLink("refWhyCommitizen")}
-                      >
-                        O que é e porque utilizar o commitizen
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o commitizen com o projeto"
                         onClick={() =>
                           changeAnchorLink("refIntegratingCommitizenToProject")
                         }
-                      >
-                        Integrando o commitizen com o projeto
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o commitizen com Husky"
                         onClick={() =>
                           changeAnchorLink("refIntegratingCommitizenToHusky")
                         }
-                      >
-                        Integrando o commitizen com Husky
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Husky/Commitizen em ação"
                         onClick={() =>
                           changeAnchorLink("refHuskyCommitizenInAction")
                         }
-                      >
-                        Husky/Commitizen em ação
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExampleEvents } from "../../variables/codeExampleEvents.js";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -336,45 +337,44 @@ function Analytics() {
                   </a>
                   <ul>
                     <li>
-                      <button
-                        onClick={() => changeAnchorLink("refWhyAnalytics")}
-                      >
-                        O que é e porque usar o Analytics
-                      </button>
+                      <ButtonLink
+                        link="O que é e porque usar o Analytics"
+                        onClick={() =>
+                          changeAnchorLink("refrefWhyAnalyticsStore")
+                        }
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o Analytics com o aplicativo"
                         onClick={() =>
                           changeAnchorLink("refIntegratingAnalytics")
                         }
-                      >
-                        Integrando o Analytics com o aplicativo
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
-                        onClick={() => changeAnchorLink("refKnowingAnalytics")}
-                      >
-                        Conhecendo o Analytics
-                      </button>
+                      <ButtonLink
+                        link="Conhecendo o Analytics"
+                        onClick={() =>
+                          changeAnchorLink("refIntegratingAnalytics")
+                        }
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Disparando eventos usando o Analytics"
                         onClick={() =>
                           changeAnchorLink("refDispatchingAnalyticsEvents")
                         }
-                      >
-                        Disparando eventos usando o Analytics
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Visualizando eventos disparados"
                         onClick={() =>
                           changeAnchorLink("refViewingAnalyticEvents")
                         }
-                      >
-                        Visualizando eventos disparados
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 
@@ -511,39 +512,35 @@ function Windows() {
                   <a className="text-muted">Workspace Preparation:</a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Sistemas utilizados"
                         onClick={() => changeAnchorLink("refApplications")}
-                      >
-                        Sistemas utilizados
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Instant Client"
                         onClick={() => changeAnchorLink("refInstantClient")}
-                      >
-                        Instant Client
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Configuração das variáveis de ambiente"
                         onClick={() =>
                           changeAnchorLink("refEnvironmentVariables")
                         }
-                      >
-                        Configuração das variáveis de ambiente
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Preparação do Ambiente de Trabalho"
                         onClick={() =>
                           changeAnchorLink("refWorkspacePreparation")
                         }
-                      >
-                        Preparação do Ambiente de Trabalho
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesCrashlytics } from "../../variables/codeExamplesCrashlytics";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -280,43 +281,38 @@ function Crashlytics() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="O que é e porque usar o Crashlytics"
                         onClick={() => changeAnchorLink("refWhyCrashlytics")}
-                      >
-                        O que é e porque usar o Crashlytics
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o App Center/Crashlytics com o aplicativo"
                         onClick={() =>
                           changeAnchorLink("refIntegratingCrashlytics")
                         }
-                      >
-                        Integrando o App Center/Crashlytics com o aplicativo
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Conhecendo o Crashlytics Dashboard"
                         onClick={() =>
                           changeAnchorLink("refKnowingCrashlytics")
                         }
-                      >
-                        Conhecendo o Crashlytics Dashboard
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Overview do Crash"
                         onClick={() => changeAnchorLink("refCrashOverview")}
-                      >
-                        Overview do Crash
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Report do Crash"
                         onClick={() => changeAnchorLink("refCrashReport")}
-                      >
-                        Report do Crash
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

@@ -8,6 +8,7 @@ import { ReduxExamples } from "../../variables/codeExamplesRedux";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 //= ==============================================================================================
 const Redux = () => {
@@ -247,44 +248,44 @@ const Redux = () => {
                   <a className="text-muted">React Redux:</a>
                   <ul>
                     <li>
-                      <button onClick={() => changeAnchorLink("refStore")}>
-                        Store
-                      </button>
+                      <ButtonLink
+                        link="Store"
+                        onClick={() => changeAnchorLink("refStore")}
+                      />
                     </li>
                     <li>
-                      <button onClick={() => changeAnchorLink("refReducer")}>
-                        Reducers
-                      </button>
+                      <ButtonLink
+                        link="Reducers"
+                        onClick={() => changeAnchorLink("refReducer")}
+                      />
                     </li>
                     <li>
-                      <button onClick={() => changeAnchorLink("refAction")}>
-                        Actions
-                      </button>
+                      <ButtonLink
+                        link="Actions"
+                        onClick={() => changeAnchorLink("refAction")}
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Encapsulamento"
                         onClick={() => changeAnchorLink("refReduxWrapper")}
-                      >
-                        Encapsulamento
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Mudando os valores dos states do redux"
                         onClick={() => changeAnchorLink("refChangingValues")}
-                      >
-                        Mudando os valores dos states do redux
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Visualizando os valores do redux"
                         onClick={() =>
                           changeAnchorLink("refViewingReduxStateValues")
                         }
-                      >
-                        Visualizando os valores do redux
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

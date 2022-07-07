@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesCodePush } from "../../variables/codeExamplesCodePush.js";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -637,99 +638,84 @@ function CodePush() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="O que é o CodePush e porque utilizá-lo"
                         onClick={() => changeAnchorLink("refWhatIsCodePush")}
-                      >
-                        O que é o CodePush e porque utilizá-lo
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Criando projeto dentro do App Center para utilizar o CodePush"
                         onClick={() =>
                           changeAnchorLink("refCreatingAProjectInAppCenter")
                         }
-                      >
-                        Criando projeto dentro do App Center para utilizar o
-                        CodePush
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Acessando o CodePush e criando os ambientes de deployment"
                         onClick={() =>
                           changeAnchorLink("refCreatingDeploymentEnvironment")
                         }
-                      >
-                        Acessando o CodePush e criando os ambientes de
-                        deployment
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando ambientes de deployment com os ambientes do app"
                         onClick={() =>
                           changeAnchorLink(
                             "refIntegratingEnvironmentsDeployment"
                           )
                         }
-                      >
-                        Integrando ambientes de deployment com os ambientes do
-                        app
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Instalando o Code Push dentro do projeto"
                         onClick={() =>
                           changeAnchorLink("refInstallingCodePush")
                         }
-                      >
-                        Instalando o Code Push dentro do projeto
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Configurando CodePush para lidar com as atualizações em tempo real"
                         onClick={() =>
                           changeAnchorLink("refConfiguringCodePush")
                         }
-                      >
-                        Configurando CodePush para lidar com as atualizações em
-                        tempo real
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Definindo quando será verificado e instalado atualizações do CodePush"
                         onClick={() =>
                           changeAnchorLink("refConfiguringWhenUpdateApp")
                         }
-                      >
-                        Definindo quando será verificado e instalado
-                        atualizações do CodePush
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Liberando atualizações pelo Code Push"
                         onClick={() =>
                           changeAnchorLink("refReleasingUpdatesByCodePush")
                         }
-                      >
-                        Liberando atualizações pelo Code Push
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Desfazendo a última release (Rollback)"
                         onClick={() =>
                           changeAnchorLink("refUndoingLastCodePushRelease")
                         }
-                      >
-                        Desfazendo a última release (Rollback)
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Gerenciando releases do Code Push através do App Center"
                         onClick={() =>
                           changeAnchorLink("refManagingCodePushReleases")
                         }
-                      >
-                        Gerenciando releases do Code Push através do App Center
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

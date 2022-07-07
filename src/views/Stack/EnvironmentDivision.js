@@ -4,6 +4,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesStructure } from "../../variables/codeExamplesStructure";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -503,35 +504,30 @@ function EnvironmentDivision() {
                   </a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="O porque e para que ter uma divisão de ambientes"
                         onClick={() =>
                           changeAnchorLink("refWhyEnvironmentDivision")
                         }
-                      >
-                        O porque e para que ter uma divisão de ambientes
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Realizando a configuração de divisão de ambientes na parte nativa - Android"
                         onClick={() =>
                           changeAnchorLink("refDoingNativeEnvironmentDivision")
                         }
-                      >
-                        Realizando a configuração de divisão de ambientes na
-                        parte nativa - Android
-                      </button>
+                      />
                     </li>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Realizando a configuração de divisão de ambientes na parte do react-native - Android"
                         onClick={() =>
                           changeAnchorLink(
                             "refDoingReactNativeEnvironmentDivision"
                           )
                         }
-                      >
-                        Realizando a configuração de divisão de ambientes na
-                        parte do react-native - Android
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

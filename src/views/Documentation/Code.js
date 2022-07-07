@@ -4,6 +4,7 @@ import { Row, Col, Card, CardBody, CardHeader, CardTitle } from "reactstrap";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 
@@ -284,49 +285,52 @@ function Code() {
                   <a className="text-muted">Code Rules:</a>
                   <ul>
                     <li>
-                      <button onClick={() => changeAnchorLink("refConsts")}>
-                        O uso de constantes deve ser aproveitado
-                      </button>
+                      <ButtonLink
+                        link="O uso de constantes deve ser aproveitado"
+                        onClick={() => changeAnchorLink("refConsts")}
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refEdent")}>
-                        Mantenha o código bem edentado
-                      </button>
+                      <ButtonLink
+                        link="Mantenha o código bem edentado"
+                        onClick={() => changeAnchorLink("refEdent")}
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refMargin")}>
-                        Separe os métodos com espaços e margens horizontais
-                      </button>
+                      <ButtonLink
+                        link="Separe os métodos com espaços e margens horizontais"
+                        onClick={() => changeAnchorLink("refMargin")}
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refOrder")}>
-                        Ordene os métodos por importância
-                      </button>
+                      <ButtonLink
+                        link="Ordene os métodos por importância"
+                        onClick={() => changeAnchorLink("refOrder")}
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Evite o uso excessivo de console.logs no projeto"
                         onClick={() => changeAnchorLink("refAvoidConsoles")}
-                      >
-                        Evite o uso excessivo de console.logs no projeto
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Evite a utilização de hardcode ao definir estilos"
                         onClick={() => changeAnchorLink("refAvoidHardcode")}
-                      >
-                        Evite a utilização de hardcode ao definir estilos
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refCodeReuse")}>
-                        Preze sempre a reutilização de código
-                      </button>
+                      <ButtonLink
+                        link="Preze sempre a reutilização de código"
+                        onClick={() => changeAnchorLink("refCodeReuse")}
+                      />
                     </li>
                   </ul>
                 </p>

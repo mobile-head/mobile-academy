@@ -9,6 +9,8 @@ import { CodeExamples } from "variables/codeExamples";
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 
+import ButtonLink from "../../components/Buttons/ButtonLink";
+
 //= ==============================================================================================
 const Mac = () => {
   const refApplications = useRef(null);
@@ -288,27 +290,26 @@ const Mac = () => {
                   <a className="text-muted">Workspace Preparation:</a>
                   <ul>
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Sistemas utilizados"
                         onClick={() => changeAnchorLink("refApplications")}
-                      >
-                        Sistemas utilizados
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button onClick={() => changeAnchorLink("refUtils")}>
-                        Utilitários
-                      </button>
+                      <ButtonLink
+                        link="Utilitários"
+                        onClick={() => changeAnchorLink("refUtils")}
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Variáveis de Ambiente"
                         onClick={() =>
                           changeAnchorLink("refEnvironmentVariables")
                         }
-                      >
-                        Variáveis de Ambiente
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>

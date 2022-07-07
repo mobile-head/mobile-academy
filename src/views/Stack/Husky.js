@@ -6,6 +6,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
+import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExmpleHusky } from "../../variables/codeExampleHusky.js";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
@@ -289,37 +290,35 @@ function Husky() {
                   </a>
                   <ul>
                     <li>
-                      <button onClick={() => changeAnchorLink("refWhyHusky")}>
-                        O que é e porque utilizar o Husky
-                      </button>
+                      <ButtonLink
+                        link="O que é e porque utilizar o Husky"
+                        onClick={() => changeAnchorLink("refWhyHusky")}
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o Husky com o projeto"
                         onClick={() =>
                           changeAnchorLink("refIntegratingHuskyToProject")
                         }
-                      >
-                        Integrando o Husky com o projeto
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Integrando o Husky com o lint-staged"
                         onClick={() =>
                           changeAnchorLink("refIntegratingPrettierLintStaged")
                         }
-                      >
-                        Integrando o Husky com o lint-staged
-                      </button>
+                      />
                     </li>
 
                     <li>
-                      <button
+                      <ButtonLink
+                        link="Husky em ação"
                         onClick={() => changeAnchorLink("refHuskyInAction")}
-                      >
-                        Husky em ação
-                      </button>
+                      />
                     </li>
                   </ul>
                 </p>
