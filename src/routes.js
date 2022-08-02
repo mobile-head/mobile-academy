@@ -501,8 +501,8 @@ var dashRoutes = [
     invisible: true,
   },
   {
-    path: "/help/Componente",
-    name: "Componente",
+    path: "/help/Component",
+    name: "Component",
     component: Componente,
     layout: "/admin",
     invisible: true,
