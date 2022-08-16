@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "28545056e36e9bee066c3cb3ec2e4774",
+    "revision": "e9fcc23b56721bf238a24ba75d258d39",
     "url": "/MobileHaven/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MobileHaven/static/css/2.395b37e6.chunk.css"
   },
   {
-    "revision": "0323d76e6ba98d8aee97",
+    "revision": "bbb3cfb20523321cb378",
     "url": "/MobileHaven/static/css/main.7d378abe.chunk.css"
   },
   {
@@ -20,12 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/MobileHaven/static/js/2.bd64917a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0323d76e6ba98d8aee97",
-    "url": "/MobileHaven/static/js/main.3619ba54.chunk.js"
+    "revision": "bbb3cfb20523321cb378",
+    "url": "/MobileHaven/static/js/main.70811618.chunk.js"
   },
   {
     "revision": "c5eafabe4b2314660f3de33fe2c9484b",
-    "url": "/MobileHaven/static/js/main.3619ba54.chunk.js.LICENSE.txt"
+    "url": "/MobileHaven/static/js/main.70811618.chunk.js.LICENSE.txt"
   },
   {
     "revision": "bcaed69f9744796ba697",
