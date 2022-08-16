@@ -19,6 +19,7 @@ import Evolog4PL from "./views/Overview/Evolog4PL.js";
 import CreatingProject from "./views/Help/CreatingProject.js";
 import CreatingRepository from "./views/Help/CreatingRepository";
 import GeneratingApkAab from "./views/Help/GeneratingApkAab";
+import GeneratingKeystore from "./views/Help/GeneratingKeystore";
 import Code from "./views/Documentation/Code.js";
 import Components from "./views/Documentation/Components.js";
 import ProjectStructure from "./views/Documentation/ProjectStructure.js";
@@ -180,13 +181,19 @@ var dashRoutes = [
       {
         path: "/help/CreatingRepository",
         name: "Creating Repositories",
-        component: GeneratingApkAab,
+        component: CreatingRepository,
         layout: "/admin",
       },
       {
         path: "/help/GeneratingApkAab",
         name: "Generating apk/aab",
         component: GeneratingApkAab,
+        layout: "/admin",
+      },
+      {
+        path: "/help/GeneratingKeystore",
+        name: "Generating Keystore",
+        component: GeneratingKeystore,
         layout: "/admin",
       },
       {
@@ -462,6 +469,13 @@ var dashRoutes = [
     path: "/help/GeneratingApkAab",
     name: "Generating apk/aab",
     component: GeneratingApkAab,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/GeneratingKeystore",
+    name: "Generating Keystore",
+    component: GeneratingKeystore,
     layout: "/admin",
     invisible: true,
   },
