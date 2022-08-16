@@ -18,6 +18,7 @@ import Evolog4PL from "./views/Overview/Evolog4PL.js";
 //-------------------------------------------------------------------------
 import CreatingProject from "./views/Help/CreatingProject.js";
 import CreatingRepository from "./views/Help/CreatingRepository";
+import GeneratingApkAab from "./views/Help/GeneratingApkAab";
 import Code from "./views/Documentation/Code.js";
 import Components from "./views/Documentation/Components.js";
 import ProjectStructure from "./views/Documentation/ProjectStructure.js";
@@ -178,8 +179,14 @@ var dashRoutes = [
       },
       {
         path: "/help/CreatingRepository",
-        name: "Creating a repository",
-        component: CreatingRepository,
+        name: "Creating Repositories",
+        component: GeneratingApkAab,
+        layout: "/admin",
+      },
+      {
+        path: "/help/GeneratingApkAab",
+        name: "Generating apk/aab",
+        component: GeneratingApkAab,
         layout: "/admin",
       },
       {
@@ -448,6 +455,13 @@ var dashRoutes = [
     path: "/help/CreatingRepository",
     name: "Creating a repository",
     component: CreatingRepository,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/GeneratingApkAab",
+    name: "Generating apk/aab",
+    component: GeneratingApkAab,
     layout: "/admin",
     invisible: true,
   },
