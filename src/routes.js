@@ -16,13 +16,14 @@ import EvologCanhoto from "./views/Overview/EvologCanhoto.js";
 import Evolog4PL from "./views/Overview/Evolog4PL.js";
 
 //-------------------------------------------------------------------------
+import CreatingProject from "./views/Help/CreatingProject.js";
+import CreatingRepository from "./views/Help/CreatingRepository";
 import Code from "./views/Documentation/Code.js";
 import Components from "./views/Documentation/Components.js";
 import ProjectStructure from "./views/Documentation/ProjectStructure.js";
 import Workflow from "./views/Documentation/Workflow.js";
 
 //-------------------------------------------------------------------------
-import CreatingProject from "./views/Help/CreatingProject.js";
 import EnvironmentDivision from "./views/Stack/EnvironmentDivision.js";
 import CodePush from "./views/Stack/CodePush.js";
 import Prettier from "./views/Stack/Prettier.js";
@@ -171,8 +172,14 @@ var dashRoutes = [
     dropdown: [
       {
         path: "/help/CreatingProject",
-        name: "Gerando um projeto",
+        name: "Generating a project",
         component: CreatingProject,
+        layout: "/admin",
+      },
+      {
+        path: "/help/CreatingRepository",
+        name: "Creating a repository",
+        component: CreatingRepository,
         layout: "/admin",
       },
       {
@@ -434,6 +441,13 @@ var dashRoutes = [
     path: "/help/CreatingProject",
     name: "Gerando um projeto",
     component: CreatingProject,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/CreatingRepository",
+    name: "Creating a repository",
+    component: CreatingRepository,
     layout: "/admin",
     invisible: true,
   },
