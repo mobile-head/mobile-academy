@@ -148,6 +148,16 @@ import { store } from '../stores';
 
 const user = store.getState().datas.user;    
     `,
+  migrationImports: `  import { persistStore, persistReducer, createMigrate } from 'redux-persist';
+  import autoMergeLevel2 from 'redux-persist/es/stateReconciler/autoMergeLevel2';
+  import rootReducer from './reducers/index';`,
+  migrationObject: `const migrations = {
+    1: (state) => rootReducer,
+};`,
+  migrationPersistConfig: `version: 1,
+debug: true,
+stateReconcilier: autoMergeLevel2,
+migrate: createMigrate(migrations, { debug: true }),`,
 };
 
 export { ReduxExamples };

@@ -32,6 +32,7 @@ import Analytics from "./views/Stack/Analytics.js";
 import Crashlytics from "./views/Stack/Crashlytics.js";
 import Commitizen from "./views/Stack/Commitizen.js";
 import Pipeline from "./views/Stack/Pipeline.js";
+import Fastlane from "./views/Stack/Fastlane.js";
 
 //-------------------------------------------------------------------------
 import Windows from "./views/WorkspacePreparation/Windows.js";
@@ -260,6 +261,12 @@ var dashRoutes = [
         component: Pipeline,
         layout: "/admin",
       },
+      {
+        path: "/stack/Fastlane",
+        name: "Fastlane",
+        component: Fastlane,
+        layout: "/admin",
+      },
     ],
   },
   // {
@@ -483,6 +490,13 @@ var dashRoutes = [
     path: "/stack/Pipeline",
     name: "Pipeline",
     component: Pipeline,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/stack/Fastlane",
+    name: "Fastlane",
+    component: Fastlane,
     layout: "/admin",
     invisible: true,
   },
