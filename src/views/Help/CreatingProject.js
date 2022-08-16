@@ -15,10 +15,12 @@ import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 function CreatingProject() {
   const refCreatingProjectWithoutTemplate = useRef(null);
   const refCreatingProjectWithTemplate = useRef(null);
+  const refCreatingProjectWithSpecificVersion = useRef(null);
 
   useScrollToAnchorByParams({
     refCreatingProjectWithoutTemplate,
     refCreatingProjectWithTemplate,
+    refCreatingProjectWithSpecificVersion,
   });
 
   const changeAnchorLink = useChangeAnchorLink();
@@ -62,9 +64,39 @@ function CreatingProject() {
                       children={CodeExamplesStructure.initProject}
                     />
                   </pre>
-                  <br />
 
                   <hr />
+
+                  <h7
+                    ref={refCreatingProjectWithSpecificVersion}
+                    id="createProjectsWithoutTemplate"
+                    class="font-weight-bold"
+                  >
+                    Criando projetos sem template com uma versão específica do
+                    react-native
+                  </h7>
+
+                  <p>
+                    Quando criamos um projeto utilizando o react-native ele
+                    tentará criar o projeto com uma versão recente do
+                    react-native, se houver a necessidade de manter a criação
+                    dos projetos utilizando uma versão específica do
+                    react-native é necessário criar o projeto da seguinte forma:
+                  </p>
+
+                  <pre>
+                    <SyntaxHighlighter
+                      language="js"
+                      style={a11yDark}
+                      PreTag="div"
+                      children={
+                        CodeExamplesStructure.creatingProjectWithSpecificRNversion
+                      }
+                    />
+                  </pre>
+
+                  <hr />
+
                   <h7
                     ref={refCreatingProjectWithTemplate}
                     id="createProjectsWithTemplate"
@@ -182,6 +214,18 @@ function CreatingProject() {
                         }
                       />
                     </li>
+
+                    <li>
+                      <ButtonLink
+                        link="Criando projetos sem template com uma versão específica do react-native"
+                        onClick={() =>
+                          changeAnchorLink(
+                            "refCreatingProjectWithSpecificVersion"
+                          )
+                        }
+                      />
+                    </li>
+
                     <li>
                       <ButtonLink
                         link="Criando projetos com template"

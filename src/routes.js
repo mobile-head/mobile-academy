@@ -16,13 +16,16 @@ import EvologCanhoto from "./views/Overview/EvologCanhoto.js";
 import Evolog4PL from "./views/Overview/Evolog4PL.js";
 
 //-------------------------------------------------------------------------
+import CreatingProject from "./views/Help/CreatingProject.js";
+import CreatingRepository from "./views/Help/CreatingRepository";
+import GeneratingApkAab from "./views/Help/GeneratingApkAab";
+import GeneratingKeystore from "./views/Help/GeneratingKeystore";
 import Code from "./views/Documentation/Code.js";
 import Components from "./views/Documentation/Components.js";
 import ProjectStructure from "./views/Documentation/ProjectStructure.js";
 import Workflow from "./views/Documentation/Workflow.js";
 
 //-------------------------------------------------------------------------
-import CreatingProject from "./views/Stack/CreatingProject.js";
 import EnvironmentDivision from "./views/Stack/EnvironmentDivision.js";
 import CodePush from "./views/Stack/CodePush.js";
 import Prettier from "./views/Stack/Prettier.js";
@@ -32,6 +35,7 @@ import Analytics from "./views/Stack/Analytics.js";
 import Crashlytics from "./views/Stack/Crashlytics.js";
 import Commitizen from "./views/Stack/Commitizen.js";
 import Pipeline from "./views/Stack/Pipeline.js";
+import Fastlane from "./views/Stack/Fastlane.js";
 
 //-------------------------------------------------------------------------
 import Windows from "./views/WorkspacePreparation/Windows.js";
@@ -163,12 +167,36 @@ var dashRoutes = [
     ],
   },
   {
-    path: "/help/Componente",
-    name: "Help",
     icon: "objects_support-17",
-    component: Componente,
+    path: "/help/CreatingProject",
+    name: "Help",
+    component: CreatingProject,
     layout: "/admin",
     dropdown: [
+      {
+        path: "/help/CreatingProject",
+        name: "Generating a project",
+        component: CreatingProject,
+        layout: "/admin",
+      },
+      {
+        path: "/help/CreatingRepository",
+        name: "Creating Repositories",
+        component: CreatingRepository,
+        layout: "/admin",
+      },
+      {
+        path: "/help/GeneratingApkAab",
+        name: "Generating apk/aab",
+        component: GeneratingApkAab,
+        layout: "/admin",
+      },
+      {
+        path: "/help/GeneratingKeystore",
+        name: "Generating Keystore",
+        component: GeneratingKeystore,
+        layout: "/admin",
+      },
       {
         path: "/help/Component",
         name: "Component",
@@ -208,18 +236,12 @@ var dashRoutes = [
     ],
   },
   {
-    path: "/stack/CreatingProject",
-    name: "Stack",
     icon: "objects_spaceship",
-    component: CreatingProject,
+    path: "/stack/EnvironmentDivision",
+    name: "Stack",
+    component: EnvironmentDivision,
     layout: "/admin",
     dropdown: [
-      {
-        path: "/stack/CreatingProject",
-        name: "Gerando um projeto",
-        component: CreatingProject,
-        layout: "/admin",
-      },
       {
         path: "/stack/EnvironmentDivision",
         name: "Divisão de ambientes",
@@ -272,6 +294,12 @@ var dashRoutes = [
         path: "/stack/Pipeline",
         name: "Pipeline",
         component: Pipeline,
+        layout: "/admin",
+      },
+      {
+        path: "/stack/Fastlane",
+        name: "Fastlane",
+        component: Fastlane,
         layout: "/admin",
       },
     ],
@@ -431,9 +459,30 @@ var dashRoutes = [
     invisible: true,
   },
   {
-    path: "/stack/CreatingProject",
+    path: "/help/CreatingProject",
     name: "Gerando um projeto",
     component: CreatingProject,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/CreatingRepository",
+    name: "Creating a repository",
+    component: CreatingRepository,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/GeneratingApkAab",
+    name: "Generating apk/aab",
+    component: GeneratingApkAab,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/GeneratingKeystore",
+    name: "Generating Keystore",
+    component: GeneratingKeystore,
     layout: "/admin",
     invisible: true,
   },
@@ -497,6 +546,13 @@ var dashRoutes = [
     path: "/stack/Pipeline",
     name: "Pipeline",
     component: Pipeline,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/stack/Fastlane",
+    name: "Fastlane",
+    component: Fastlane,
     layout: "/admin",
     invisible: true,
   },
