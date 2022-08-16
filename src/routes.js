@@ -47,6 +47,7 @@ import Redux from "./views/Help/Redux.js";
 import Componente from "./views/Help/Componente.js";
 import Logica from "./views/Help/Logica.js";
 import Flatlist from "./views/Help/Flatlist.js";
+import Camera from "./views/Help/Camera.js";
 
 var dashRoutes = [
   {
@@ -196,6 +197,12 @@ var dashRoutes = [
         path: "/help/Flatlist",
         name: "Flatlist",
         component: Flatlist,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Camera",
+        name: "Câmera",
+        component: Camera,
         layout: "/admin",
       },
     ],
@@ -539,6 +546,13 @@ var dashRoutes = [
     path: "/help/Flatlist",
     name: "Flatlist",
     component: Flatlist,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Camera",
+    name: "Câmera",
+    component: Camera,
     layout: "/admin",
     invisible: true,
   },
