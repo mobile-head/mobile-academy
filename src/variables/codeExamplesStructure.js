@@ -183,6 +183,7 @@ const CodeExamplesStructure = {
 "run:android:qas": "node ./scripts/prepareEnvDevelopment.js qas android && yarn android --appIdSuffix qas --variant qas",
 "run:android:prd": "node ./scripts/prepareEnvDevelopment.js prd android && yarn android --appIdSuffix prd --variant prd",`,
   runAppExample: `yarn run:android:dev`,
+  creatingProjectWithSpecificRNversion: `npx react-native init app_oferecimento --version 0.62.2`,
 };
 
 export { CodeExamplesStructure };

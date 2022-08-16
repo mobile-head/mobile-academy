@@ -22,7 +22,7 @@ import ProjectStructure from "./views/Documentation/ProjectStructure.js";
 import Workflow from "./views/Documentation/Workflow.js";
 
 //-------------------------------------------------------------------------
-import CreatingProject from "./views/Stack/CreatingProject.js";
+import CreatingProject from "./views/Help/CreatingProject.js";
 import EnvironmentDivision from "./views/Stack/EnvironmentDivision.js";
 import CodePush from "./views/Stack/CodePush.js";
 import Prettier from "./views/Stack/Prettier.js";
@@ -163,12 +163,18 @@ var dashRoutes = [
     ],
   },
   {
-    path: "/help/Componente",
-    name: "Help",
     icon: "objects_support-17",
-    component: Componente,
+    path: "/help/CreatingProject",
+    name: "Help",
+    component: CreatingProject,
     layout: "/admin",
     dropdown: [
+      {
+        path: "/help/CreatingProject",
+        name: "Gerando um projeto",
+        component: CreatingProject,
+        layout: "/admin",
+      },
       {
         path: "/help/Component",
         name: "Component",
@@ -202,18 +208,12 @@ var dashRoutes = [
     ],
   },
   {
-    path: "/stack/CreatingProject",
-    name: "Stack",
     icon: "objects_spaceship",
-    component: CreatingProject,
+    path: "/stack/EnvironmentDivision",
+    name: "Stack",
+    component: EnvironmentDivision,
     layout: "/admin",
     dropdown: [
-      {
-        path: "/stack/CreatingProject",
-        name: "Gerando um projeto",
-        component: CreatingProject,
-        layout: "/admin",
-      },
       {
         path: "/stack/EnvironmentDivision",
         name: "Divisão de ambientes",
@@ -431,7 +431,7 @@ var dashRoutes = [
     invisible: true,
   },
   {
-    path: "/stack/CreatingProject",
+    path: "/help/CreatingProject",
     name: "Gerando um projeto",
     component: CreatingProject,
     layout: "/admin",
