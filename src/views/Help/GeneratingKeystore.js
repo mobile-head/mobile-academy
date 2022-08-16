@@ -143,6 +143,8 @@ function GeneratingKeystore() {
                     <h7 class="text-muted">android/app</h7>.
                   </p>
 
+                  <br />
+
                   <h7 ref={refSettingUpKeystores} class="font-weight-bold">
                     Configurando as keystores
                   </h7>
