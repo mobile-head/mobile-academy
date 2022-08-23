@@ -1,6 +1,14 @@
 import React, { useRef } from "react";
 
-import { Row, Col, Card, CardBody, CardHeader, CardTitle } from "reactstrap";
+import {
+  Row,
+  Col,
+  Card,
+  CardBody,
+  CardHeader,
+  CardTitle,
+  Table,
+} from "reactstrap";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
@@ -9,7 +17,6 @@ import PanelHeader from "../../components/PanelHeader/PanelHeader.js";
 import ButtonLink from "../../components/Buttons/ButtonLink";
 
 import { CodeExamplesFastlane } from "../../variables/codeExamplesFastlane";
-import { CodeExamplesESLint } from "../../variables/codeExamplesESLint";
 import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 
 //= ==============================================================================================
@@ -19,8 +26,9 @@ function Fastlane() {
   const refIntegratingFastlaneToAndroid = useRef(null);
   const refIntegratingFastlaneToIos = useRef(null);
   const refESLintInAction = useRef(null);
-  const refUsingESLint = useRef(null);
-  const refResolvingErrors = useRef(null);
+  const refCreatingAndroidLanes = useRef(null);
+  const refCreatingIosLanes = useRef(null);
+  const refRunningLanes = useRef(null);
 
   useScrollToAnchorByParams({
     refWhyFastlane,
@@ -28,8 +36,9 @@ function Fastlane() {
     refIntegratingFastlaneToAndroid,
     refIntegratingFastlaneToIos,
     refESLintInAction,
-    refUsingESLint,
-    refResolvingErrors,
+    refCreatingAndroidLanes,
+    refCreatingIosLanes,
+    refRunningLanes,
   });
 
   const changeAnchorLink = useChangeAnchorLink();
@@ -111,7 +120,110 @@ function Fastlane() {
                   <br />
                   <br />
                   <br />
+
+                  <br />
                   <hr />
+                  <p>
+                    <h7
+                      ref={refIntegratingFastlaneToProject}
+                      id="ESLintIntegration"
+                      class="font-weight-bold"
+                    >
+                      Instalando o ruby
+                    </h7>
+
+                    <p>
+                      De forma normal o ruby já vem instalado no mac, porém pode
+                      haver problemas com sua utilização, um bom exemplo é
+                      devido a falta de praticidade no controle de suas versões.
+                      Para podermos ter várias versões instaladas na nossa
+                      máquina e conseguir controlar qual a versão queremos
+                      utilizar, seja de forma local ou de forma global podemos
+                      utilizar algumas ferramentas tais como{" "}
+                      <h7 class="text-muted">rmv</h7> e{" "}
+                      <h7 class="text-muted">rbenv</h7>.
+                    </p>
+
+                    <p>
+                      Aqui utilizaremos a ferramenta{" "}
+                      <h7 class="text-muted">rbenv</h7> que pode ser instalada
+                      utilizando o <h7 class="text-muted">brew</h7> desta forma:
+                    </p>
+
+                    <pre>
+                      <SyntaxHighlighter
+                        language="js"
+                        style={a11yDark}
+                        PreTag="div"
+                        children={CodeExamplesFastlane.installRbenvUsingBrew}
+                      />
+                    </pre>
+
+                    <p>
+                      Em seguida adicione o seguinte conteúdo no final do
+                      arquivo <h7 class="text-muted">.zshrc</h7>:
+                    </p>
+
+                    <pre>
+                      <SyntaxHighlighter
+                        language="js"
+                        style={a11yDark}
+                        PreTag="div"
+                        children={
+                          CodeExamplesFastlane.contentNeededInEnvVariables
+                        }
+                      />
+                    </pre>
+
+                    <p>Abra um novo terminal e digite os seguintes comandos:</p>
+
+                    <pre>
+                      <SyntaxHighlighter
+                        language="js"
+                        style={a11yDark}
+                        PreTag="div"
+                        children={
+                          CodeExamplesFastlane.installingAndControlingRubyWithRbenv
+                        }
+                      />
+                    </pre>
+
+                    <p>
+                      Podemos checar se tudo deu certo com os comandos abaixo:
+                    </p>
+
+                    <pre>
+                      <SyntaxHighlighter
+                        language="js"
+                        style={a11yDark}
+                        PreTag="div"
+                        children={
+                          CodeExamplesFastlane.checkIfRubyWasInstalledSuccessfuly
+                        }
+                      />
+                    </pre>
+
+                    <p>
+                      Se tudo estiver correto execute o comando abaixo para
+                      instalar o bundler:
+                    </p>
+
+                    <pre>
+                      <SyntaxHighlighter
+                        language="js"
+                        style={a11yDark}
+                        PreTag="div"
+                        children={CodeExamplesFastlane.installBundler}
+                      />
+                    </pre>
+
+                    <p>
+                      Se houver algum problema execute o comando com{" "}
+                      <h7 class="text-muted">sudo</h7>
+                    </p>
+                    <br />
+                    <hr />
+                  </p>
                   <p>
                     <h7
                       ref={refIntegratingFastlaneToProject}
@@ -205,50 +317,52 @@ function Fastlane() {
                       configurar o Fastlane no projeto:
                     </p>
 
-                    <dl>
-                      <dt>
-                        <h7 class="text-muted">
-                          1. Package Name (com.krausefx.app)
-                        </h7>{" "}
-                      </dt>
-                      <dd>
-                        Informe o package name do projeto que pode ser
-                        encontrado dentro de{" "}
-                        <h7 class="text-muted">
-                          android/app/src/main/AndroidManifest.xml
-                        </h7>{" "}
-                        na propriedade <h7 class="text-muted">package</h7>.
-                      </dd>
-
-                      <dt>
-                        <h7 class="text-muted">
-                          2. Path to the json secret file
-                        </h7>{" "}
-                      </dt>
-                      <dd>
-                        Informe o caminho onde está localizado o{" "}
-                        <h7 class="text-muted">service account json</h7>, este
-                        arquivo nos permite acessar a conta de desenvolvedor do
-                        Google Play e extrair metadata e também realizarmos
-                        alterações como o deploy de uma aplicação por exemplo.
-                      </dd>
-
-                      <dt>
-                        <h7 class="text-muted">
-                          3. Do you plan on uploading metadata, screenshots, and
-                          builds to Google Play using fastlane?
-                        </h7>{" "}
-                      </dt>
-                      <dd>Responda "y".</dd>
-
-                      <dt>
-                        <h7 class="text-muted">
-                          4. Download existing metadata and setup metadata
-                          management?
-                        </h7>{" "}
-                      </dt>
-                      <dd>Responda "y".</dd>
-                    </dl>
+                    <Table striped hover>
+                      <thead>
+                        <tr>
+                          <th>Question</th>
+                          <th>Answer</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Package Name (com.krausefx.app)</td>
+                          <td>
+                            Informe o package name do projeto que pode ser
+                            encontrado dentro de{" "}
+                            <h7 class="text-muted">
+                              android/app/src/main/AndroidManifest.xml
+                            </h7>{" "}
+                            na propriedade <h7 class="text-muted">package</h7>.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Path to the json secret file</td>
+                          <td>
+                            Informe o caminho onde está localizado o{" "}
+                            <h7 class="text-muted">service account json</h7>,
+                            este arquivo nos permite acessar a conta de
+                            desenvolvedor do Google Play e extrair metadata e
+                            também realizarmos alterações como o deploy de uma
+                            aplicação por exemplo.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Do you plan on uploading metadata, screenshots, and
+                            builds to Google Play using fastlane?
+                          </td>
+                          <td>Responda "y".</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Download existing metadata and setup metadata
+                            management?
+                          </td>
+                          <td>Responda "y".</td>
+                        </tr>
+                      </tbody>
+                    </Table>
                   </p>
                   <p id="nibble">
                     No fim o Fastlane estará integrado ao projeto e teremos algo
@@ -261,6 +375,94 @@ function Fastlane() {
                       src={require("assets/img/fastlane-android-questions-2.png")}
                     />
                   </div>
+                  <br />
+                  <hr />
+
+                  <h7
+                    ref={refCreatingAndroidLanes}
+                    id="ESLintIntegration"
+                    class="font-weight-bold"
+                  >
+                    Configurando lanes para o Android
+                  </h7>
+                  <p id="nibble">
+                    Agora vamos criar lanes para o android utilizando o
+                    fastlane, lanes são conjuntos de ações que podemos executar.
+                  </p>
+
+                  <p>
+                    Dentro de{" "}
+                    <h7 class="text-muted">android/fastlane/Fastfile</h7> defina
+                    o seguinte conteúdo:
+                  </p>
+
+                  <pre>
+                    <SyntaxHighlighter
+                      language="js"
+                      style={a11yDark}
+                      PreTag="div"
+                      children={CodeExamplesFastlane.androidLanes}
+                    />
+                  </pre>
+
+                  <p>
+                    Agora vamos entender algumas informações importantes sobra
+                    cada uma das lanes:
+                  </p>
+
+                  <Table striped hover>
+                    <thead>
+                      <tr>
+                        <th>Lane</th>
+                        <th>Lane Function</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <h7 class="text-muted">deployBeta</h7>{" "}
+                        </td>
+                        <td>
+                          Realiza a limpeza da pasta{" "}
+                          <h7 class="text-muted">build</h7> define o{" "}
+                          <h7 class="text-muted">build type</h7> da .aab que
+                          será gerada, e enfim realiza o upload da .aab para a
+                          track <h7 class="text-muted">beta</h7> responsável por
+                          lidar com a disponibilidade de testes do aplicativo
+                          para o grupo de teste.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>deployProduction</td>
+                        <td>
+                          Realiza a limpeza da pasta{" "}
+                          <h7 class="text-muted">build</h7> define o{" "}
+                          <h7 class="text-muted">build type</h7> da .aab que
+                          será gerada, e enfim realiza o upload da .aab para a
+                          track <h7 class="text-muted">production</h7>{" "}
+                          responsável por lidar com a disponibilidade do
+                          aplicativo para todos os seus usuários.{" "}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <h7 class="text-muted">bump</h7>{" "}
+                        </td>
+                        <td>
+                          Responsável por aumentar o{" "}
+                          <h7 class="text-muted">versionCode</h7> e definir a
+                          mesma versão presente no package.json para o
+                          versionName dentro de android/app/build.gradle. Esta
+                          lane é executada através do husky junto com a lib{" "}
+                          <h7 class="text-muted">standard-version</h7>{" "}
+                          responsável por aumentar a versão do aplicativo dentro
+                          do package.json baseado no changelog dos commits que
+                          foram realizados.
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+
                   <br />
                   <hr />
                   <h7
@@ -286,51 +488,63 @@ function Fastlane() {
                     Após isso serão solicitadas algumas perguntas para
                     configurar o Fastlane no projeto:
                   </p>
-                  <dl>
-                    <dt>
-                      <h7 class="text-muted">
-                        1. What would you like to use fastlane for? <br />
-                        1. 📸 Automate screenshots <br />
-                        2. 👩‍✈️ Automate beta distribution to TestFlight <br />
-                        3. 🚀 Automate App Store distribution <br />
-                        4. 🛠 Manual setup - manually setup your project to
-                        automate your tasks
-                      </h7>{" "}
-                    </dt>
-                    <dd>
-                      Informe a opção 4. (
-                      <h7 class="text-muted">
-                        Manual setup - manually setup your project to automate
-                        your tasks
-                      </h7>
-                      )
-                    </dd>
 
-                    <dt>
-                      <h7 class="text-muted">2. Select Scheme</h7>{" "}
-                    </dt>
-                    <dd>Escolha sempre o scheme que não seja de tvOS.</dd>
+                  <Table striped hover>
+                    <thead>
+                      <tr>
+                        <th>Question</th>
+                        <th>Answer</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <h7 class="text-muted">
+                            1. What would you like to use fastlane for? <br />
+                            1. 📸 Automate screenshots <br />
+                            2. 👩‍✈️ Automate beta distribution to TestFlight{" "}
+                            <br />
+                            3. 🚀 Automate App Store distribution <br />
+                            4. 🛠 Manual setup - manually setup your project to
+                            automate your tasks
+                          </h7>{" "}
+                        </td>
+                        <td>
+                          Informe a opção 4. (
+                          <h7 class="text-muted">
+                            Manual setup - manually setup your project to
+                            automate your tasks
+                          </h7>
+                          )
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Select Scheme</td>
+                        <td>Escolha sempre o scheme que não seja de tvOS.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <h7 class="text-muted">
+                            3. Please enter your Apple ID developer credentials
+                            <br />
+                            Apple ID Username:
+                          </h7>{" "}
+                        </td>
+                        <td>
+                          Informe o apple id que é o email que você utiliza para
+                          logar na App Store Connect.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          4. Would you like fastlane to manage your app's
+                          metadata?
+                        </td>
+                        <td>Responda "y".</td>
+                      </tr>
+                    </tbody>
+                  </Table>
 
-                    <dt>
-                      <h7 class="text-muted">
-                        3. Please enter your Apple ID developer credentials
-                        <br />
-                        Apple ID Username:
-                      </h7>{" "}
-                    </dt>
-                    <dd>
-                      Informe o apple id que é o email que você utiliza para
-                      logar na App Store Connect.
-                    </dd>
-
-                    <dt>
-                      <h7 class="text-muted">
-                        4. Would you like fastlane to manage your app's
-                        metadata?
-                      </h7>{" "}
-                    </dt>
-                    <dd>Responda "y".</dd>
-                  </dl>
                   <p id="nibble">
                     No fim o Fastlane estará integrado ao projeto e teremos algo
                     semelhante a isso em nosso terminal:
@@ -362,6 +576,135 @@ function Fastlane() {
                   <hr />
 
                   <br />
+
+                  <h7
+                    ref={refCreatingIosLanes}
+                    id="ESLintIntegration"
+                    class="font-weight-bold"
+                  >
+                    Configurando lanes para o iOS
+                  </h7>
+                  <p id="nibble">
+                    Agora vamos criar as lanes para o iOS dentro de{" "}
+                    <h7 class="text-muted">ios/fastlane/Fastfile,</h7> defina o
+                    seguinte conteúdo:
+                  </p>
+
+                  <pre>
+                    <SyntaxHighlighter
+                      language="js"
+                      style={a11yDark}
+                      PreTag="div"
+                      children={CodeExamplesFastlane.iosLanes}
+                    />
+                  </pre>
+
+                  <p>
+                    Vamos entender algumas informações importantes sobre cada
+                    uma das lanes também:
+                  </p>
+
+                  <Table striped hover>
+                    <thead>
+                      <tr>
+                        <th>Lane</th>
+                        <th>Lane Function</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>increment_build_number</td>
+                        <td>
+                          Incrementa o<h7 class="text-muted">build number</h7>{" "}
+                          do projeto para poder subir uma nova release sem
+                          conflito de versão.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>get_certificates</td>
+                        <td>
+                          Checa se já algum certificado de distribuição
+                          instalado na máquina, se houver o define, senão gera
+                          uma nova
+                          <h7 class="text-muted">private key,</h7> realiza uma
+                          nova requisição de login, em seguida gera, baixa e
+                          instala o certificado na máquina local e importa todos
+                          os arquivos gerados para a Keychan.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>get_provisioning_profile</td>
+                        <td>
+                          Realiza o donwload do úlitmo{" "}
+                          <h7 class="text-muted">provisioning profile</h7> ou o
+                          cria caso não houver, se o mesmo quebrado também é
+                          realizado a reparação, se expirado é capaz de realizar
+                          a renovação.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>update_project_provisioning</td>
+                        <td>
+                          Responsável por atualizar as configurações no código
+                          do projeto a partir do
+                          <h7 class="text-muted">provisioning profile</h7>{" "}
+                          dentro do arquivo{" "}
+                          <h7 class="text-muted">
+                            *.xcodeproj/project.pbxproj
+                          </h7>
+                          .
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>update_project_team</td>
+                        <td>
+                          Define o<h7 class="text-muted">team_id</h7> correto do
+                          projeto.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>build_app</td>
+                        <td>
+                          Responsável por gerar uma nova build do projeto.
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>upload_to_testflight</td>
+                        <td>
+                          Responsável por realizar o upload da build para o{" "}
+                          <h7 class="text-muted">TestFlight</h7>.{" "}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </Table>
+                  <br />
+                  <hr />
+
+                  <h7 ref={refRunningLanes} class="font-weight-bold">
+                    Executando as lanes
+                  </h7>
+                  <p id="nibble">
+                    Agora que temos todo o nosso projeto configurado, nós
+                    podemos começar a executar as lanes que criamos. Temos as
+                    lanes do android e do iOS, para executar as lanes do android
+                    navegue para <h7 class="text-muted">android/</h7> e para
+                    executar as lanes do iOS, navegue para{" "}
+                    <h7 class="text-muted">ios/</h7>, o comando para executar as
+                    lanes é o mesmo e pode ser visto abaixo:
+                  </p>
+                  <pre>
+                    <SyntaxHighlighter
+                      language="js"
+                      style={a11yDark}
+                      PreTag="div"
+                      children={CodeExamplesFastlane.runningLanes}
+                    />
+                  </pre>
+
+                  {/* <p id="nibble">
+                    Após isso serão solicitadas algumas perguntas para
+                    configurar o Fastlane no projeto:
+                  </p> */}
                 </p>
               </CardBody>
             </Card>
@@ -411,6 +754,14 @@ function Fastlane() {
                     </li>
                     <li>
                       <ButtonLink
+                        link="Configurando lanes para o Android"
+                        onClick={() =>
+                          changeAnchorLink("refCreatingAndroidLanes")
+                        }
+                      />
+                    </li>
+                    <li>
+                      <ButtonLink
                         link="Integrando o Fastlane ao iOS"
                         onClick={() =>
                           changeAnchorLink("refIntegratingFastlaneToIos")
@@ -419,8 +770,14 @@ function Fastlane() {
                     </li>
                     <li>
                       <ButtonLink
-                        link="ESLint em ação"
-                        onClick={() => changeAnchorLink("refESLintInAction")}
+                        link="Configurando lanes para o iOS"
+                        onClick={() => changeAnchorLink("refCreatingIosLanes")}
+                      />
+                    </li>
+                    <li>
+                      <ButtonLink
+                        link="Executando as lanes"
+                        onClick={() => changeAnchorLink("refRunningLanes")}
                       />
                     </li>
                   </ul>
