@@ -52,6 +52,7 @@ import Componente from "./views/Help/Componente.js";
 import Logica from "./views/Help/Logica.js";
 import Flatlist from "./views/Help/Flatlist.js";
 import Camera from "./views/Help/Camera.js";
+import Axios from "./views/Help/Axios.js";
 
 var dashRoutes = [
   {
@@ -231,6 +232,12 @@ var dashRoutes = [
         path: "/help/Camera",
         name: "Câmera",
         component: Camera,
+        layout: "/admin",
+      },
+      {
+        path: "/help/Axios",
+        name: "Axios",
+        component: Axios,
         layout: "/admin",
       },
     ],
@@ -609,6 +616,13 @@ var dashRoutes = [
     path: "/help/Camera",
     name: "Câmera",
     component: Camera,
+    layout: "/admin",
+    invisible: true,
+  },
+  {
+    path: "/help/Axios",
+    name: "Axios",
+    component: Axios,
     layout: "/admin",
     invisible: true,
   },

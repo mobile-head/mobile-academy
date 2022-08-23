@@ -212,10 +212,6 @@ const Camera = () => {
                     Exemplo
                   </h7>
 
-                  <p>
-                    Primeiro vamos criar uma FlatList simples, com poucos
-                    atributos:
-                  </p>
                   <SyntaxHighlighter
                     language="js"
                     style={a11yDark}
