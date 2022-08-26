@@ -22,6 +22,7 @@ import { useScrollToAnchorByParams, useChangeAnchorLink } from "utils";
 //= ==============================================================================================
 function Fastlane() {
   const refWhyFastlane = useRef(null);
+  const refInstallingRuby = useRef(null);
   const refIntegratingFastlaneToProject = useRef(null);
   const refIntegratingFastlaneToAndroid = useRef(null);
   const refIntegratingFastlaneToIos = useRef(null);
@@ -32,6 +33,7 @@ function Fastlane() {
 
   useScrollToAnchorByParams({
     refWhyFastlane,
+    refInstallingRuby,
     refIntegratingFastlaneToProject,
     refIntegratingFastlaneToAndroid,
     refIntegratingFastlaneToIos,
@@ -125,7 +127,7 @@ function Fastlane() {
                   <hr />
                   <p>
                     <h7
-                      ref={refIntegratingFastlaneToProject}
+                      ref={refInstallingRuby}
                       id="ESLintIntegration"
                       class="font-weight-bold"
                     >
@@ -736,6 +738,13 @@ function Fastlane() {
                         onClick={() => changeAnchorLink("refWhyFastlane")}
                       />
                     </li>
+                    <li>
+                      <ButtonLink
+                        link="Instalando o ruby"
+                        onClick={() => changeAnchorLink("refInstallingRuby")}
+                      />
+                    </li>
+
                     <li>
                       <ButtonLink
                         link="Integrando o Fastlane com o projeto"
