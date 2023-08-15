@@ -3,7 +3,7 @@
   "version": "1.4.0",
   "main": "dist/index.js",
   "private": true,
-  "homepage": "https://Kalebesamuel.github.io/MobileHaven",
+  "homepage": "https://mobile-head.github.io/mobile-academy/",
   "dependencies": {
     "bootstrap": "4.5.0",
     "chart.js": "2.9.3",
